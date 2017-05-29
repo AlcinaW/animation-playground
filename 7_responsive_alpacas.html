@@ -6,15 +6,15 @@
     <style type="text/css">
     #div1 {
       border: 1px solid black;
-      width: 10em;
+      width: 100vw;
       height: 90vh;
     }
     </style>
   </head>
   <body>
     <label>Width</label>
-    <input type='range' min='0' max='100' value='10' step='1'
-        onchange="setStyleOn('width', 'div1', this.value + 'em')" />
+    <input type='range' min='0' max='100' value='100' step='1'
+        onchange="setStyleOn('width', 'div1', this.value + 'vw')" />
     <div id="div1">
     </div>
 
