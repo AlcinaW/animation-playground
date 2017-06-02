@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Responsive Alpacas</title>
+    <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #alpaca-div {
+      border: 1px solid black;
+      width: 95vw;
+      height: 90vh;
+      margin: auto;
+    }
+    .alpaca-slider {
+      width: 15em;
+      margin: auto;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="alpaca-div">
+      <img src="">
+      <div class="alpaca-slider">
+      <label>Width</label>
+      <input type='range' min='15' max='100' value='90' step='1'
+          onchange="setStyleOn('width', 'alpaca-div', this.value + 'vw')" />
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+      //var widthSlider = document.getElementById("widthSlider");
+      function setStyleOn(rule, targetId, value) {
+          x = document.getElementById(targetId);
+          x.style[rule] = value;
+        }
+  </script>
+</html>
