@@ -7,14 +7,17 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #C6C6C6;
-      /* overflow: hidden; */
+      /* background-color: #C6C6C6; */
+      background-color: #82090b;
+      overflow: hidden;
     }
-    svg {
+    .camp-capers {
       height: 95vh;
       display: block;
       width: 100vw;
     }
+    /* HOVER DETECT 
+    Detects what side of the page the cursor is on */
     .hover-detect {
       height: 100vh;
       width: 100vw;
@@ -94,6 +97,8 @@
     .eye-l, .eye-l {
       transition: all 6s ease-out;
     }
+    /* BLINKING ANIMATION
+    Because the number of points are the same between open and shut, the SVG path can be morphed. */
     @keyframes blinkright {
       0% {
         d: path("M1412.52,890.39s12.7-13.32,9.78-47.05c0,0-22.12.63-48.73,13.06l0,0s-18.55,6-46.91,31.31c-12,10.73-25.74,26.3-40.63,44.14,0,0,57.61-58.66,96-64C1397.76,870.91,1414.92,877.29,1412.52,890.39Z");
@@ -123,6 +128,7 @@
     .eyelid-l1 path {
        animation: blinkleft 4s infinite;
     }
+    /* FIRE ANIMATION */
     .fire-base {
       animation: fireMove 3s linear infinite;
     }
@@ -163,12 +169,12 @@
       transform-origin: 60% 40% 0;
     }
     .fire-spark #spark-2 {
-      animation-delay: 1s;
-      animation-duration: 3s;
+      animation-duration: 1s;
+      animation-delay: .2s;
     }
     .fire-spark #spark-3 {
-      animation-duration: 5s;
-      animation-delay: 1s;
+      animation-duration: 2s;
+      animation-delay: 1zzs;
     }
     @keyframes fireMove {
       50% {
@@ -189,39 +195,27 @@
         opacity: 0;
       }
     }
-
-    .grid, .grid * {
-      z-index: -5;
+    /* BACKGROUND CIRCLES */
+    .circle-group, .circle-group * {
+      z-index: -2;
       position: absolute;
       top: 50%;
       left: 50%;
+      display: block;
     }
-    .grid :nth-child(2n + 0) {
-      background-color: #e90003;
+    .circle-group :nth-child(2n + 0) {
+      /* background-color: #e90003;*/
+      background-color: #82090b;
     }
-
     .circle {
-      background-color: #000;
+      /*background-color: #000; */
+      background-color: #141414;
     }
     .circle:nth-child(1) {
       z-index: 8;
       margin: 0em;
       border-radius: 0em;
-      -webkit-animation: expandingcircle0 1s linear infinite;
               animation: expandingcircle0 1s linear infinite;
-    }
-    @-webkit-keyframes expandingcircle0 {
-      0% {
-        margin: 0em;
-        width: 0em;
-        height: 0em;
-      }
-      100% {
-        margin: -16em;
-        width: 32em;
-        height: 32em;
-        border-radius: 32em;
-      }
     }
     @keyframes expandingcircle0 {
       0% {
@@ -240,21 +234,7 @@
       z-index: 7;
       margin: -8em;
       border-radius: 16em;
-      -webkit-animation: expandingcircle1 1s linear infinite;
               animation: expandingcircle1 1s linear infinite;
-    }
-    @-webkit-keyframes expandingcircle1 {
-      0% {
-        margin: -8em;
-        width: 16em;
-        height: 16em;
-      }
-      100% {
-        margin: -24em;
-        width: 48em;
-        height: 48em;
-        border-radius: 48em;
-      }
     }
     @keyframes expandingcircle1 {
       0% {
@@ -273,21 +253,7 @@
       z-index: 6;
       margin: -16em;
       border-radius: 32em;
-      -webkit-animation: expandingcircle2 1s linear infinite;
               animation: expandingcircle2 1s linear infinite;
-    }
-    @-webkit-keyframes expandingcircle2 {
-      0% {
-        margin: -16em;
-        width: 32em;
-        height: 32em;
-      }
-      100% {
-        margin: -32em;
-        width: 64em;
-        height: 64em;
-        border-radius: 64em;
-      }
     }
     @keyframes expandingcircle2 {
       0% {
@@ -306,21 +272,7 @@
       z-index: 5;
       margin: -24em;
       border-radius: 48em;
-      -webkit-animation: expandingcircle3 1s linear infinite;
               animation: expandingcircle3 1s linear infinite;
-    }
-    @-webkit-keyframes expandingcircle3 {
-      0% {
-        margin: -24em;
-        width: 48em;
-        height: 48em;
-      }
-      100% {
-        margin: -40em;
-        width: 80em;
-        height: 80em;
-        border-radius: 80em;
-      }
     }
     @keyframes expandingcircle3 {
       0% {
@@ -339,21 +291,7 @@
       z-index: 4;
       margin: -32em;
       border-radius: 64em;
-      -webkit-animation: expandingcircle4 1s linear infinite;
               animation: expandingcircle4 1s linear infinite;
-    }
-    @-webkit-keyframes expandingcircle4 {
-      0% {
-        margin: -32em;
-        width: 64em;
-        height: 64em;
-      }
-      100% {
-        margin: -48em;
-        width: 96em;
-        height: 96em;
-        border-radius: 96em;
-      }
     }
     @keyframes expandingcircle4 {
       0% {
@@ -372,21 +310,7 @@
       z-index: 3;
       margin: -40em;
       border-radius: 80em;
-      -webkit-animation: expandingcircle5 1s linear infinite;
               animation: expandingcircle5 1s linear infinite;
-    }
-    @-webkit-keyframes expandingcircle5 {
-      0% {
-        margin: -40em;
-        width: 80em;
-        height: 80em;
-      }
-      100% {
-        margin: -56em;
-        width: 112em;
-        height: 112em;
-        border-radius: 112em;
-      }
     }
     @keyframes expandingcircle5 {
       0% {
@@ -405,21 +329,7 @@
       z-index: 2;
       margin: -48em;
       border-radius: 96em;
-      -webkit-animation: expandingcircle6 1s linear infinite;
               animation: expandingcircle6 1s linear infinite;
-    }
-    @-webkit-keyframes expandingcircle6 {
-      0% {
-        margin: -48em;
-        width: 96em;
-        height: 96em;
-      }
-      100% {
-        margin: -64em;
-        width: 128em;
-        height: 128em;
-        border-radius: 128em;
-      }
     }
     @keyframes expandingcircle6 {
       0% {
@@ -438,21 +348,7 @@
       z-index: 1;
       margin: -56em;
       border-radius: 112em;
-      -webkit-animation: expandingcircle7 1s linear infinite;
               animation: expandingcircle7 1s linear infinite;
-    }
-    @-webkit-keyframes expandingcircle7 {
-      0% {
-        margin: -56em;
-        width: 112em;
-        height: 112em;
-      }
-      100% {
-        margin: -72em;
-        width: 144em;
-        height: 144em;
-        border-radius: 144em;
-      }
     }
     @keyframes expandingcircle7 {
       0% {
@@ -467,22 +363,13 @@
         border-radius: 144em;
       }
     }
-
-
-
-
-
-
-
-
-
     </style>
   </head>
   <body>
     <!-- Expand circles background inspired by https://codepen.io/fr0zenr34lity/pen/GpWYYK -->
     <section class="capers-div">
       <div class="hover-detect">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><title>Camp and Capers SVG</title>
+          <svg class="camp-capers" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><title>Camp and Capers SVG</title>
             <g id="camp-capers">
               <!-- FIRE BEHIND THE MASK START -->
               <g class="fire" id="fire_base" data-name="fire-base">
@@ -563,25 +450,33 @@
       <div class="hover-right"></div>
     </div> <!-- HOVER DIV END -->
     <!-- BACKGROUND TEST -->
-    <div class='grid'>
-      <div class='circle'></div>
-      <div class='circle'></div>
-      <div class='circle'></div>
-      <div class='circle'></div>
-      <div class='circle'></div>
-      <div class='circle'></div>
-      <div class='circle'></div>
-      <div class='circle'></div>
-    </div>
-    <div class="circle-group">
-      <svg>
-        <circle class="circle" cx="100" cy="100" r="100"/>
+    <div class='circle-group'>
+  <div class='circle'></div>
+  <div class='circle'></div>
+  <div class='circle'></div>
+  <div class='circle'></div>
+  <div class='circle'></div>
+  <div class='circle'></div>
+  <div class='circle'></div>
+  <div class='circle'></div>
+</div>
+    <!-- <div>
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="circle-group">
+        <circle cx="100" cy="100" r="100"/>
+        <circle cx="100" cy="100" r="100"/>
+        <circle cx="100" cy="100" r="100"/>
+        <circle cx="100" cy="100" r="100"/>
+        <circle cx="100" cy="100" r="100"/>
+        <circle cx="100" cy="100" r="100"/>
+        <circle cx="100" cy="100" r="100"/>
+        <circle cx="100" cy="100" r="100"/>
       </svg>
-    </div>
+    </div> -->
     <!-- BACKGROUND TEST END -->
     </section>
   </body>
   <script type="text/javascript">
+  //declare all the items to be controlled
   var socketLeft = document.getElementsByClassName("hover-left");
   var socketRight = document.getElementsByClassName("hover-right");
   var leftPupil = document.getElementById("eye-l");
@@ -602,6 +497,7 @@
     console.log("right");
     setTimeout ("resetLookRight()", 4000 );
   }
+  //RESET FUNCTIONS
   function resetLookLeft() {
     leftPupil.classList.remove("lookingleft-l");
     rightPupil.classList.remove("lookingleft-r");
@@ -615,6 +511,5 @@
 
   hLeft.addEventListener("mouseover", hoverLeft, false);
   hRight.addEventListener("mouseover", hoverRight, false);
-
   </script>
 </html>
