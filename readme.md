@@ -8,3 +8,5 @@ SVG and animation projects
 4. "404 Not Found" (SVG, CSS) - [Codepen demo](http://codepen.io/AlcinaW/full/jmywqZ)
 5. "Awake!" (SVG, CSS) - [Codepen demo](http://codepen.io/AlcinaW/full/dWXEQX)
 6. "What Grows in the Garden of Your Mind" - [Demo](http://alcinaw.github.io/demos/6_garden_tunnel.html)
+7. "Camp &amp; Capers" - Demo
+8. "Responsive Alpacas" (w.i.p.)
