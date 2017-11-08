@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVG Pocky Loader</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:700i,900" rel="stylesheet">
+    <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Nunito, Arial, sans-serif;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: center;
+      color: #acacac;
+    }
+    h1 {
+      text-transform: uppercase;
+      font-size: 2.5em;
+      line-height: 1.5;
+    }
+    .info-section p {
+      padding-bottom: 1em;
+    }
+    h1::before {
+      content: "\2605";
+    }
+    h1::after {
+      content: "\2605";
+    }
+    .info-section {
+      padding-bottom: 2em;
+    }
+    a, a:hover  {
+      color: #acacac;
+    }
+    .loading-text {
+      font-weight: 700;
+      font-size: 1.25em;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #f00022;
+    }
+    svg {
+      width: 25vw;
+      margin-top: 7em;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+    section.info-section, section.loader {
+      display: block;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    p.loading-text {
+      text-align: center;
+    }
+    p.loading-text .letter {
+      display: inline-block;
+      margin-right: 3px;
+      animation: wave 1.5s linear infinite;
+    }
+    p.loading-text .letter:nth-child(2) {
+      animation-delay: -1.3s;
+    }
+    p.loading-text .letter:nth-child(3) {
+      animation-delay: -1.1s;
+    }
+    p.loading-text .letter:nth-child(4) {
+      animation-delay: -0.9s;
+    }
+    p.loading-text .letter:nth-child(5) {
+      animation-delay: -0.7s;
+    }
+    p.loading-text .letter:nth-child(6) {
+      animation-delay: -0.5s;
+    }
+    p.loading-text .letter:nth-child(7) {
+      animation-delay: -0.3s;
+    }
+    p.loading-text .letter:nth-child(8) {
+      animation-delay: -0.2s;
+    }
+    p.loading-text .letter:nth-child(9) {
+      animation-delay: -0.1s;
+    }
+    @keyframes wave {
+      0%, 60%, 100% {
+        transform: initial;
+      }
+      30% {
+        transform: translateY(-15px);
+      }
+    }
+    #chocolate rect {
+      width: 13em;
+      animation: loadWidth 5s forwards;
+      /* Strawberry: #ff98c6
+    Matcha: #2e8f2a
+    Banana: #fff79e
+    Chocolate: #79401c
+    fill: */
+    }
+    @keyframes loadWidth {
+     0% {
+       width: 0;
+      }
+      5% {
+        width: .5em;
+      }
+      25% {
+        width: 2em;
+      }
+      75% {
+        width: 9em;
+      }
+      100% {
+        width: 13em;
+      }
+    }
+
+    </style>
+  </head>
+  <body>
+    <section class="info-section">
+      <h1>SVG Pocky Loader</h2>
+      <p>Inspired by <a href="http://pocky-sharehappi.com/" target="_blank">Pocky's Sharehappi</a></p>
+    </section>
+    <section class="loader">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.25 10">
+        <rect width="251.25" height="10" rx="5" ry="5" fill="#fbb970"/>
+        <g fill="#f8a263">
+          <path d="M13.89 9.54L5 4.42A1.5 1.5 0 1 0 3.52 7l5.17 3h5.69a1.48 1.48 0 0 0-.49-.46zM246.06 9.54l-8.88-5.12a1.5 1.5 0 1 0-1.5 2.6l5.17 3H246a4.85 4.85 0 0 0 .52-.05 1.48 1.48 0 0 0-.46-.43zM47.06 9.54l-8.88-5.12A1.5 1.5 0 1 0 36.68 7l5.17 3h5.69a1.48 1.48 0 0 0-.48-.46zM80.23 9.54l-8.88-5.12A1.5 1.5 0 1 0 69.85 7L75 10h5.69a1.48 1.48 0 0 0-.46-.46zM113.39 9.54l-8.88-5.12A1.5 1.5 0 1 0 103 7l5.17 3h5.69a1.48 1.48 0 0 0-.47-.46zM146.56 9.54l-8.88-5.12a1.5 1.5 0 1 0-1.5 2.6l5.17 3H147a1.48 1.48 0 0 0-.44-.48zM179.73 9.54l-8.88-5.12a1.5 1.5 0 1 0-1.5 2.6l5.17 3h5.69a1.48 1.48 0 0 0-.48-.48zM212.89 9.54L204 4.42a1.5 1.5 0 1 0-1.5 2.6l5.17 3h5.69a1.48 1.48 0 0 0-.47-.48zM218.14 5.59a1.5 1.5 0 0 0 2 .55L229.06 1a1.49 1.49 0 0 0 .71-1h-5l-6.14 3.54a1.5 1.5 0 0 0-.49 2.05zM185 5.59a1.5 1.5 0 0 0 2 .55L195.89 1a1.49 1.49 0 0 0 .71-1h-5l-6.14 3.54a1.5 1.5 0 0 0-.46 2.05zM151.8 5.59a1.5 1.5 0 0 0 2 .55L162.73 1a1.49 1.49 0 0 0 .71-1h-5l-6.14 3.54a1.5 1.5 0 0 0-.5 2.05zM118.64 5.59a1.5 1.5 0 0 0 2 .55L129.56 1a1.49 1.49 0 0 0 .71-1h-5l-6.14 3.54a1.5 1.5 0 0 0-.49 2.05zM85.47 5.59a1.5 1.5 0 0 0 2 .55L96.39 1a1.49 1.49 0 0 0 .71-1h-5L86 3.54a1.5 1.5 0 0 0-.53 2.05zM52.3 5.59a1.5 1.5 0 0 0 2 .55L63.23 1a1.49 1.49 0 0 0 .71-1H59l-6.15 3.54a1.5 1.5 0 0 0-.55 2.05zM19.14 5.59a1.5 1.5 0 0 0 2 .55L30.06 1a1.49 1.49 0 0 0 .71-1h-5l-6.09 3.54a1.5 1.5 0 0 0-.54 2.05z"/>
+        </g>
+        <g id="chocolate">
+          <defs>
+            <clipPath id="chocolate-clip">
+                <path d="M5 0a5 5 0 0 0 0 10h184.25V0z" />
+            </clipPath>
+          </defs>
+          <!-- <path d="M5 0a5 5 0 0 0 0 10h184.25V0z" fill="#79401c" clip-path="url(#chocolate-clip)" /> -->
+          <!-- <path d="M5 0a5 5 0 0 0 0 10h184.25V0z" fill="#79401c" /> -->
+
+
+          <rect width="100" height="100" fill="#79401c" clip-path="url(#chocolate-clip)" />
+        </g>
+      </svg>
+
+      <p class="loading-text" id="load">
+        <span class="l letter">L</span><span class="o letter">o</span><span class="a letter">a</span><span class="d letter">d</span><span class="i letter">i</span><span class="n letter">n</span><span class="g letter">g</span><span class="dot letter">.</span><span class="dot letter">.</span><span class="dot letter">.</span>
+      </p>
+    </section>
+  </body>
+
+  <script type="text/javascript">
+  // var chocolate = document.getElementById("chocolate");
+  // var width = 1;
+  // var clippath = document.createElementNS(_svgNS, 'clipPath');
+  // clippath.setAttributeNS(null, 'id', 'clip');
+  // parent.appendChild(clippath);
+  </script>
+</html>
