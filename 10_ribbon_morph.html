@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ribbon Morph</title>
+    <style type="text/css">
+    body{
+      margin: 0;
+      padding: 0;
+    }
+    svg {
+      width: 75vw;
+    }
+    .original {
+      visibility: hidden;
+    }
+    .top {
+         z-index:2;
+    }
+    .bottom {
+       z-index: 1;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="ribbon-div">
+      <svg class="ribbon-base" id="ribbon-base" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126.25 107.5">
+        <title>ribbon-01</title>
+
+        <polygon class="morph-origin bottom ribbon-2"  id="ribbon-2" data-name="bottom ribbon-2" points="123.01 65.68 123.01 65.62 123.01 41.88 123.01 41.94 123.01 65.68" fill="#41424f" stroke="#41424f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <polygon class="morph-origin bottom ribbon-4"  id="ribbon-4" data-name="bottom ribbon-1" points="123.01 26.35 123.01 26.22 123.01 2.48 123.01 2.6 123.01 26.35" fill="#41424f" stroke="#41424f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <polygon class="morph-origin top ribbon-5"  id="ribbon-5" data-name="top ribbon-3" points="2.27 104.85 2.5 104.85 2.5 92.98 2.5 81.1 2.27 81.1 2.27 104.85" fill="#fff" stroke="#41424f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <polygon class="morph-origin top ribbon-1" id="ribbon-1" data-name="top ribbon-1" points="2.27 26.29 2.5 26.29 2.27 14.41 2.5 2.54 2.27 2.54 2.27 26.29" fill="#fff" stroke="#41424f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <rect class="morph-origin top ribbon-3" id="ribbon-3" data-name="top ribbon-2" x="2.28" y="41.94" width="0.23" height="23.75" fill="#fff" stroke="#41424f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+
+
+        <polygon  class="original bottom ribbon--2" id="ribbon--2" data-name="bottom ribbon-1 original" points="2.27 65.68 123.01 26.22 123.01 2.48 2.27 41.94 2.27 65.68" fill="#41424f" stroke="#41424f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      <polygon class="original bottom ribbon--4" id="ribbon--4" data-name="bottom ribbon-2 original" points="123.01 65.68 2.28 104.35 2.28 80.6 123.01 41.94 123.01 65.68" fill="#41424f" stroke="#41424f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <polygon  class="original top ribbon--5" id="ribbon--5" data-name="top ribbon-3 original" points="2.27 104.85 123.01 104.85 111.67 92.98 123.01 81.1 2.27 81.1 2.27 104.85" fill="#fff" stroke="#41424f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <polygon class="original top ribbon--1" id="ribbon--1" data-name="top ribbon--1 original" points="123.24 26.29 2.5 26.29 13.84 14.41 2.5 2.54 123.24 2.54 123.24 26.29" fill="#fff" stroke="#41424f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+        <rect  class="original top ribbon--3" id="ribbon--3" data-name="top ribbon-2 original" x="2.28" y="41.94" width="120.73" height="23.75" fill="#fff" stroke="#41424f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </svg>
+    </div>
+  </body>
+  //GSAP scripts - only work on Codepen due to special licensing
+  <script type="text/javascript">
+  MorphSVGPlugin.convertToPath("circle, rect, ellipse, line, polygon, polyline");
+
+  var tl = new TimelineLite({}),
+  ribbonOne = document.getElementById("ribbon-1"),
+  ribbonTwo = document.getElementById("ribbon-2"),
+  ribbonThree = document.getElementById("ribbon-3"),
+  ribbonFour = document.getElementById("ribbon-4"),
+  ribbonFive = document.getElementById("ribbon-5");
+
+  tl.to(ribbonOne, 1, {morphSVG:"#ribbon--1"}, "+=1")
+    .to(ribbonTwo, 1, {morphSVG:"#ribbon--2"}, "+=1")
+    .to(ribbonThree, 1, {morphSVG:"#ribbon--3"}, "+=1")
+    .to(ribbonFour, 1, {morphSVG:"#ribbon--4"}, "+=1")
+    .to(ribbonFive, 1, {morphSVG:"#ribbon--5"}, "+=1");
+
+  </script>
+</html>
