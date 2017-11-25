@@ -17,7 +17,10 @@
     h1 span {
       font-weight: 400;
       font-size: 1.3em;
-      margin-left: -.3em;
+      display: block;
+      width: 95vw;
+      padding: 0;
+
     }
     h1 span:nth-of-type(1):before, h1 span:nth-of-type(1):after {
       display: inline-block;
@@ -62,6 +65,7 @@
       height: 95vh;
       resize: both;
       overflow: auto;
+      margin-right: -2em;
     }
     .tool-title {
       position: absolute;
@@ -70,9 +74,30 @@
       transform: translate(-50%, -50%);
       text-align: center;
     }
+
+
+    @media screen and (max-width: 699px) {
+      h1 span {
+        font-size: .8em;
+        margin-left: 0;
+      }
+      h1 span:nth-of-type(1):before, h1 span:nth-of-type(1):after {
+        width: 10vw;
+      }
+      h1 span:nth-of-type(2) {
+        font-size: 2.2em;
+        line-height: 1;
+      }
+      h1 span:nth-of-type(3) {
+        line-height: 1.5;
+        font-size: 1.2em;
+      }
+    }
     </style>
   </head>
   <body>
+
+
     <section class="tool-title">
       <h1>
         <span>The</span><br />
@@ -355,6 +380,8 @@
     </svg>
   </section>
   </body>
+  <script src="library/anime.min.js"></script>
   <script type="text/javascript">
+
   </script>
 </html>
