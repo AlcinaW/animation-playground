@@ -9,7 +9,8 @@
       padding: 0;
     }
     body {
-      background-color: #fff;
+      background-color: red;
+      overflow: hidden;
     }
     h1 {
         position: absolute;
@@ -17,18 +18,26 @@
         left: 5vw;
     }
     .overlay {
-        position: absolute;
+        /*position: absolute;
         opacity: .85;
         z-index: 10000;
     	  border-bottom: 100vw solid red;
         border-right: 25vw solid transparent;
     	height: 0;
-    	width: 50vw;
+    	width: 50vw;*/
+      position: absolute;
+      background-color: red;
+      opacity: .85;
+      z-index: 10000;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 110vh;
     }
     svg {
       overflow: hidden;
       width: 100vw;
-      height: 100vh;
+      height: 110vh;
     }
     .star-lines path {
         //animation: createBox 5s infinite;
