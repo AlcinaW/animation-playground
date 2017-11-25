@@ -37,16 +37,16 @@
     a, a:hover  {
       color: #acacac;
     }
-    .loading-text {
+    .loading-text, .complete-text {
       font-weight: 700;
-      font-size: 1.25em;
+      font-size: 2.5em;
       font-style: italic;
       text-transform: uppercase;
       letter-spacing: .5px;
       color: #f00022;
     }
     svg {
-      width: 25vw;
+      width: 50vw;
       margin-top: 7em;
       margin-bottom: 1em;
       text-align: center;
@@ -60,6 +60,7 @@
     }
     p.loading-text {
       text-align: center;
+      animation: changeOut 4.5s step-end both;
     }
     p.loading-text .letter {
       display: inline-block;
@@ -101,11 +102,11 @@
     #chocolate rect {
       width: 13em;
       animation: loadWidth 5s forwards;
-      /* Strawberry: #ff98c6
-    Matcha: #2e8f2a
-    Banana: #fff79e
-    Chocolate: #79401c
-    fill: */
+        /* Strawberry: #ff98c6
+      Matcha: #2e8f2a
+      Banana: #fff79e
+      Chocolate: #79401c
+      fill: */
     }
     @keyframes loadWidth {
      0% {
@@ -124,38 +125,48 @@
         width: 13em;
       }
     }
-
+  .complete-text {
+    letter-spacing: 3px;
+    animation: change 4.5s step-end both;
+    margin-top: -1.4em;
+  }
+  @keyframes change {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+  }
+  @keyframes changeOut {
+      from { opacity: 1; }
+      to   { opacity: 0;, font-size:.001; visibility: none; }
+  }
     </style>
   </head>
   <body>
     <section class="info-section">
-      <h1>SVG Pocky Loader</h2>
-      <p>Inspired by <a href="http://pocky-sharehappi.com/" target="_blank">Pocky's Sharehappi</a></p>
-    </section>
-    <section class="loader">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.25 10">
-        <rect width="251.25" height="10" rx="5" ry="5" fill="#fbb970"/>
-        <g fill="#f8a263">
-          <path d="M13.89 9.54L5 4.42A1.5 1.5 0 1 0 3.52 7l5.17 3h5.69a1.48 1.48 0 0 0-.49-.46zM246.06 9.54l-8.88-5.12a1.5 1.5 0 1 0-1.5 2.6l5.17 3H246a4.85 4.85 0 0 0 .52-.05 1.48 1.48 0 0 0-.46-.43zM47.06 9.54l-8.88-5.12A1.5 1.5 0 1 0 36.68 7l5.17 3h5.69a1.48 1.48 0 0 0-.48-.46zM80.23 9.54l-8.88-5.12A1.5 1.5 0 1 0 69.85 7L75 10h5.69a1.48 1.48 0 0 0-.46-.46zM113.39 9.54l-8.88-5.12A1.5 1.5 0 1 0 103 7l5.17 3h5.69a1.48 1.48 0 0 0-.47-.46zM146.56 9.54l-8.88-5.12a1.5 1.5 0 1 0-1.5 2.6l5.17 3H147a1.48 1.48 0 0 0-.44-.48zM179.73 9.54l-8.88-5.12a1.5 1.5 0 1 0-1.5 2.6l5.17 3h5.69a1.48 1.48 0 0 0-.48-.48zM212.89 9.54L204 4.42a1.5 1.5 0 1 0-1.5 2.6l5.17 3h5.69a1.48 1.48 0 0 0-.47-.48zM218.14 5.59a1.5 1.5 0 0 0 2 .55L229.06 1a1.49 1.49 0 0 0 .71-1h-5l-6.14 3.54a1.5 1.5 0 0 0-.49 2.05zM185 5.59a1.5 1.5 0 0 0 2 .55L195.89 1a1.49 1.49 0 0 0 .71-1h-5l-6.14 3.54a1.5 1.5 0 0 0-.46 2.05zM151.8 5.59a1.5 1.5 0 0 0 2 .55L162.73 1a1.49 1.49 0 0 0 .71-1h-5l-6.14 3.54a1.5 1.5 0 0 0-.5 2.05zM118.64 5.59a1.5 1.5 0 0 0 2 .55L129.56 1a1.49 1.49 0 0 0 .71-1h-5l-6.14 3.54a1.5 1.5 0 0 0-.49 2.05zM85.47 5.59a1.5 1.5 0 0 0 2 .55L96.39 1a1.49 1.49 0 0 0 .71-1h-5L86 3.54a1.5 1.5 0 0 0-.53 2.05zM52.3 5.59a1.5 1.5 0 0 0 2 .55L63.23 1a1.49 1.49 0 0 0 .71-1H59l-6.15 3.54a1.5 1.5 0 0 0-.55 2.05zM19.14 5.59a1.5 1.5 0 0 0 2 .55L30.06 1a1.49 1.49 0 0 0 .71-1h-5l-6.09 3.54a1.5 1.5 0 0 0-.54 2.05z"/>
-        </g>
-        <g id="chocolate">
-          <defs>
-            <clipPath id="chocolate-clip">
-                <path d="M5 0a5 5 0 0 0 0 10h184.25V0z" />
-            </clipPath>
-          </defs>
-          <!-- <path d="M5 0a5 5 0 0 0 0 10h184.25V0z" fill="#79401c" clip-path="url(#chocolate-clip)" /> -->
-          <!-- <path d="M5 0a5 5 0 0 0 0 10h184.25V0z" fill="#79401c" /> -->
+        <h1>SVG Pocky Loader</h2>
+        <p>Inspired by <a href="http://pocky-sharehappi.com/" target="_blank">Pocky's Sharehappi</a></p>
+      </section>
+      <section class="loader">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.25 10">
+          <rect width="251.25" height="10" rx="5" ry="5" fill="#fbb970"/>
+          <g fill="#f8a263">
+            <path d="M13.89 9.54L5 4.42A1.5 1.5 0 1 0 3.52 7l5.17 3h5.69a1.48 1.48 0 0 0-.49-.46zM246.06 9.54l-8.88-5.12a1.5 1.5 0 1 0-1.5 2.6l5.17 3H246a4.85 4.85 0 0 0 .52-.05 1.48 1.48 0 0 0-.46-.43zM47.06 9.54l-8.88-5.12A1.5 1.5 0 1 0 36.68 7l5.17 3h5.69a1.48 1.48 0 0 0-.48-.46zM80.23 9.54l-8.88-5.12A1.5 1.5 0 1 0 69.85 7L75 10h5.69a1.48 1.48 0 0 0-.46-.46zM113.39 9.54l-8.88-5.12A1.5 1.5 0 1 0 103 7l5.17 3h5.69a1.48 1.48 0 0 0-.47-.46zM146.56 9.54l-8.88-5.12a1.5 1.5 0 1 0-1.5 2.6l5.17 3H147a1.48 1.48 0 0 0-.44-.48zM179.73 9.54l-8.88-5.12a1.5 1.5 0 1 0-1.5 2.6l5.17 3h5.69a1.48 1.48 0 0 0-.48-.48zM212.89 9.54L204 4.42a1.5 1.5 0 1 0-1.5 2.6l5.17 3h5.69a1.48 1.48 0 0 0-.47-.48zM218.14 5.59a1.5 1.5 0 0 0 2 .55L229.06 1a1.49 1.49 0 0 0 .71-1h-5l-6.14 3.54a1.5 1.5 0 0 0-.49 2.05zM185 5.59a1.5 1.5 0 0 0 2 .55L195.89 1a1.49 1.49 0 0 0 .71-1h-5l-6.14 3.54a1.5 1.5 0 0 0-.46 2.05zM151.8 5.59a1.5 1.5 0 0 0 2 .55L162.73 1a1.49 1.49 0 0 0 .71-1h-5l-6.14 3.54a1.5 1.5 0 0 0-.5 2.05zM118.64 5.59a1.5 1.5 0 0 0 2 .55L129.56 1a1.49 1.49 0 0 0 .71-1h-5l-6.14 3.54a1.5 1.5 0 0 0-.49 2.05zM85.47 5.59a1.5 1.5 0 0 0 2 .55L96.39 1a1.49 1.49 0 0 0 .71-1h-5L86 3.54a1.5 1.5 0 0 0-.53 2.05zM52.3 5.59a1.5 1.5 0 0 0 2 .55L63.23 1a1.49 1.49 0 0 0 .71-1H59l-6.15 3.54a1.5 1.5 0 0 0-.55 2.05zM19.14 5.59a1.5 1.5 0 0 0 2 .55L30.06 1a1.49 1.49 0 0 0 .71-1h-5l-6.09 3.54a1.5 1.5 0 0 0-.54 2.05z"/>
+          </g>
+          <g id="chocolate">
+            <defs>
+              <clipPath id="chocolate-clip">
+                  <path d="M5 0a5 5 0 0 0 0 10h184.25V0z" />
+              </clipPath>
+            </defs>
+            <!-- TODO Change colour randomly onload? -->
+            <rect width="100" height="100" fill="#79401c" clip-path="url(#chocolate-clip)" />
+          </g>
+        </svg>
 
-
-          <rect width="100" height="100" fill="#79401c" clip-path="url(#chocolate-clip)" />
-        </g>
-      </svg>
-
-      <p class="loading-text" id="load">
-        <span class="l letter">L</span><span class="o letter">o</span><span class="a letter">a</span><span class="d letter">d</span><span class="i letter">i</span><span class="n letter">n</span><span class="g letter">g</span><span class="dot letter">.</span><span class="dot letter">.</span><span class="dot letter">.</span>
-      </p>
-    </section>
+        <p class="loading-text" id="load">
+          <span class="l letter">L</span><span class="o letter">o</span><span class="a letter">a</span><span class="d letter">d</span><span class="i letter">i</span><span class="n letter">n</span><span class="g letter">g</span><span class="dot letter">.</span><span class="dot letter">.</span><span class="dot letter">.</span>
+        </p>
+        <p class="complete-text">Complete!</p>
+      </section>
   </body>
 
   <script type="text/javascript">
