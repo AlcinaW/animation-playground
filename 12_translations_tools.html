@@ -72,6 +72,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
+      z-index: 1;
     }
 
 
@@ -90,6 +91,21 @@
       h1 span:nth-of-type(3) {
         line-height: 1.5;
         font-size: 1.2em;
+      }
+    }
+    svg {
+      animation: moveUpDown 2.25s linear infinite;
+    }
+
+    @keyframes moveUpDown {
+      0% {
+        transform: none;
+      }
+      50% {
+        transform: translateX(0) translateY(.75em);
+      }
+      100% {
+        transform: none;
       }
     }
     .img-gp {
