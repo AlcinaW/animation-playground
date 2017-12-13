@@ -74,8 +74,6 @@
       text-align: center;
       z-index: 1;
     }
-
-
     @media screen and (max-width: 699px) {
       h1 span {
         font-size: .8em;
@@ -93,10 +91,53 @@
         font-size: 1.2em;
       }
     }
+    @media screen and (max-width: 932px) {
+      svg {
+        width: 90vw;
+      }
+    }
     svg {
       animation: moveUpDown 2.25s linear infinite;
     }
-
+    .tool-illustration {
+      animation-delay: .2s;
+      animation: bounceIn 2s linear forwards;
+      opacity: 0;
+      /*animation-name: bounceIn;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;*/
+    }
+    .tool-title {
+      opacity: 0;
+      animation: fade 2s linear forwards;
+    }
+    @keyframes fade {
+      50%{
+        opacity: .75;
+      }
+      100%{
+        opacity: 1;
+      }
+    }
+    @keyframes bounceIn{
+      0%{
+        opacity: 0;
+        transform: scale(0.3) translate3d(0,0,0);
+      }
+      50%{
+        opacity: 0.9;
+        transform: scale(1.1);
+      }
+      80%{
+        opacity: 1;
+        transform: scale(0.89);
+      }
+      100%{
+        opacity: 1;
+        transform: scale(1) translate3d(0,0,0);
+      }
+    }
     @keyframes moveUpDown {
       0% {
         transform: none;
@@ -119,6 +160,21 @@
     }
     .img-gp.right.notebook:hover {
       transform: perspective(15em) translate3d(-5em, 1em, 10em) scale(1.02) translateX(2em) translateY(-5em);
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    .stars {
+      animation: pulse 2s ease-out;
     }
     </style>
   </head>
@@ -156,17 +212,17 @@
             <clipPath id="g" transform="translate(255.55 469.08)">
                 <path d="M668.75 1336v-60.5a78.64 78.64 0 0 0 2 8.12c3.23 9.23 9.55 24 19.6 33.95a53.83 53.83 0 0 0 4.9 4.28 91.46 91.46 0 0 0 15.73 9.12 94.3 94.3 0 0 0 19.81 6.16h-3.62l1.26.37h2.37a84.41 84.41 0 0 0-10.54 2.69c-8.93 3.29-21.71 9.1-30.89 17.88-8.78 9.18-14.59 22-17.88 30.89a84.4 84.4 0 0 0-2.69 10.54v-2.37c-2-6.92-8.77-27.41-21.56-40.07-15.58-15.42-40.46-20.25-40.46-19.89h2.47-1.89s24.31-4.15 39.89-19.56c12.8-12.66 19.56-33.15 21.56-40.07z" fill="#fff" />
             </clipPath>
-            <clipPath id="h" transform="translate(255.55 469.08)">
-                <path d="M1294.15 103.5h2.37a84.41 84.41 0 0 0-10.52 2.7c-8.93 3.29-21.71 9.1-30.89 17.88-8.78 9.18-14.59 22-17.88 30.89a84.4 84.4 0 0 0-2.69 10.54v-2.37c-2-6.92-8.77-27.41-21.56-40.07-15.58-15.42-40.46-20.25-40.46-19.89h2.47-1.89s24.31-4.15 39.89-19.56c12.8-12.66 19.56-33.15 21.56-40.07" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" clip-path="url(#a)" />
+            <clipPath id="h" transform="translate(255.55 469.08)" class="stars">
+                <path d="M1294.15 103.5h2.37a84.41 84.41 0 0 0-10.52 2.7c-8.93 3.29-21.71 9.1-30.89 17.88-8.78 9.18-14.59 22-17.88 30.89a84.4 84.4 0 0 0-2.69 10.54v-2.37c-2-6.92-8.77-27.41-21.56-40.07-15.58-15.42-40.46-20.25-40.46-19.89h2.47-1.89s24.31-4.15 39.89-19.56c12.8-12.66 19.56-33.15 21.56-40.07" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" clip-path="url(#a)"/>
             </clipPath>
             <clipPath id="i" transform="translate(255.55 469.08)">
                 <path d="M1825.13 332.45v-60.54s.28 3.24 1 8.12c1.64 9.23 4.87 24 10 33.95a46.64 46.64 0 0 0 2.5 4.28 53.34 53.34 0 0 0 8 9.12 33.42 33.42 0 0 0 10.09 6.16h-1.85l.64.37h1.21a27.5 27.5 0 0 0-5.37 2.69 53.29 53.29 0 0 0-15.74 17.88c-4.47 9.18-7.43 22-9.11 30.89-1 6.19-1.37 10.54-1.37 10.54v-2.37c-1-6.92-4.47-27.41-11-40.07-7.94-15.42-20.62-20.25-20.62-19.89h1.26-1s12.39-4.15 20.33-19.56c6.52-12.66 10-33.15 11-40.07z" fill="#fff" />
             </clipPath>
             <clipPath id="j" transform="translate(255.55 469.08)">
-                <path d="M1811.38 396.5h1.48a52.86 52.86 0 0 0-6.6 1.69c-5.59 2.06-13.59 5.7-19.35 11.19-5.5 5.75-9.14 13.75-11.19 19.35a52.86 52.86 0 0 0-1.69 6.6v-1.49c-1.26-4.33-5.49-17.16-13.5-25.09-9.76-9.65-25.34-12.68-25.34-12.45h1.54-1.19s15.22-2.6 25-12.25c8-7.93 12.25-20.76 13.5-25.09" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" clip-path="url(#b)" />
+                <path d="M1811.38 396.5h1.48a52.86 52.86 0 0 0-6.6 1.69c-5.59 2.06-13.59 5.7-19.35 11.19-5.5 5.75-9.14 13.75-11.19 19.35a52.86 52.86 0 0 0-1.69 6.6v-1.49c-1.26-4.33-5.49-17.16-13.5-25.09-9.76-9.65-25.34-12.68-25.34-12.45h1.54-1.19s15.22-2.6 25-12.25c8-7.93 12.25-20.76 13.5-25.09" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" clip-path="url(#b)" class="stars" />
             </clipPath>
             <clipPath id="k" transform="translate(255.55 469.08)">
-                <path d="M117.77 813h1.48a52.86 52.86 0 0 0-6.6 1.69c-5.59 2.06-13.59 5.7-19.35 11.19-5.5 5.75-9.14 13.75-11.19 19.35a52.86 52.86 0 0 0-1.69 6.6v-1.49c-1.26-4.33-5.49-17.16-13.5-25.09-9.76-9.65-25.34-12.68-25.34-12.45h1.54-1.18s15.22-2.6 25-12.25c8-7.93 12.25-20.76 13.5-25.09" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" clip-path="url(#c)" />
+                <path d="M117.77 813h1.48a52.86 52.86 0 0 0-6.6 1.69c-5.59 2.06-13.59 5.7-19.35 11.19-5.5 5.75-9.14 13.75-11.19 19.35a52.86 52.86 0 0 0-1.69 6.6v-1.49c-1.26-4.33-5.49-17.16-13.5-25.09-9.76-9.65-25.34-12.68-25.34-12.45h1.54-1.18s15.22-2.6 25-12.25c8-7.93 12.25-20.76 13.5-25.09" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" clip-path="url(#c)" class="stars" />
             </clipPath>
             <clipPath id="l" transform="translate(255.55 469.08)">
                 <path d="M-8.53 743.65v-60.54a78.64 78.64 0 0 0 2 8.12c3.23 9.23 9.55 24 19.6 33.95a53.83 53.83 0 0 0 4.9 4.28 91.46 91.46 0 0 0 15.73 9.12 94.3 94.3 0 0 0 19.81 6.16h-3.66l1.26.37h2.37a84.41 84.41 0 0 0-10.54 2.69C34 751.09 21.23 756.9 12 765.68c-8.78 9.18-14.59 22-17.88 30.89a84.4 84.4 0 0 0-2.69 10.54v-2.37c-2-6.92-8.77-27.41-21.56-40.07-15.58-15.42-40.46-20.25-40.46-19.89h2.47H-70s24.31-4.15 39.89-19.56c12.8-12.66 19.56-33.15 21.56-40.07z" fill="#fff" />
@@ -178,26 +234,26 @@
                 <path d="M793.25 1174.66V1140a45 45 0 0 0 1.12 4.65c1.85 5.29 5.47 13.74 11.22 19.44a30.83 30.83 0 0 0 2.8 2.45 52.37 52.37 0 0 0 9 5.22 54 54 0 0 0 11.34 3.53h-2.07l.72.21h1.36a48.33 48.33 0 0 0-6 1.54c-5.11 1.88-12.43 5.21-17.69 10.24-5 5.26-8.35 12.58-10.24 17.69a48.33 48.33 0 0 0-1.54 6v-1.37c-1.15-4-5-15.69-12.35-22.94-8.92-8.83-23.17-11.6-23.17-11.39h1.41-1.08s13.92-2.37 22.84-11.2c7.33-7.25 11.2-19 12.35-22.94z" fill="#fff" />
             </clipPath>
             <clipPath id="o" transform="translate(255.55 469.08)">
-                <path d="M1011.61 397.13h1.48a52.86 52.86 0 0 0-6.6 1.69c-5.59 2.06-13.59 5.7-19.35 11.19-5.5 5.75-9.14 13.75-11.19 19.35a52.86 52.86 0 0 0-1.69 6.6v-1.49c-1.26-4.33-5.49-17.16-13.5-25.09-9.76-9.65-25.34-12.68-25.34-12.45h1.54-1.19s15.22-2.6 25-12.25c8-7.93 12.25-20.76 13.5-25.09" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" clip-path="url(#d)" />
+                <path d="M1011.61 397.13h1.48a52.86 52.86 0 0 0-6.6 1.69c-5.59 2.06-13.59 5.7-19.35 11.19-5.5 5.75-9.14 13.75-11.19 19.35a52.86 52.86 0 0 0-1.69 6.6v-1.49c-1.26-4.33-5.49-17.16-13.5-25.09-9.76-9.65-25.34-12.68-25.34-12.45h1.54-1.19s15.22-2.6 25-12.25c8-7.93 12.25-20.76 13.5-25.09" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" clip-path="url(#d)" class="stars" />
             </clipPath>
             <clipPath id="p" transform="translate(255.55 469.08)">
                 <path d="M868.8 728.41v-34.68a45 45 0 0 0 1.12 4.65c1.85 5.29 5.47 13.74 11.22 19.44a30.83 30.83 0 0 0 2.8 2.45 52.37 52.37 0 0 0 9 5.22A54 54 0 0 0 904.3 729h-2.07l.72.21h1.36a48.33 48.33 0 0 0-6 1.54c-5.11 1.88-12.43 5.21-17.69 10.24-5 5.26-8.35 12.58-10.24 17.69a48.33 48.33 0 0 0-1.54 6v-1.37c-1.15-4-5-15.69-12.35-22.94-8.92-8.83-23.17-11.6-23.17-11.39h1.41-1.08s13.92-2.37 22.84-11.2c7.33-7.25 11.2-19 12.35-22.94z" fill="#fff" />
             </clipPath>
             <clipPath id="q" transform="translate(255.55 469.08)">
-                <path d="M1232.8-182.8v2.37a84.41 84.41 0 0 0-2.69-10.54c-3.29-8.93-9.1-21.71-17.88-30.89-9.18-8.78-22-14.59-30.89-17.88a84.4 84.4 0 0 0-10.54-2.69h2.37c6.92-2 27.41-8.77 40.07-21.56 15.42-15.58 20.25-40.46 19.89-40.46v2.47-1.89s4.15 24.31 19.56 39.89c12.66 12.8 33.15 19.56 40.07 21.56" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" clip-path="url(#e)" />
+                <path d="M1232.8-182.8v2.37a84.41 84.41 0 0 0-2.69-10.54c-3.29-8.93-9.1-21.71-17.88-30.89-9.18-8.78-22-14.59-30.89-17.88a84.4 84.4 0 0 0-10.54-2.69h2.37c6.92-2 27.41-8.77 40.07-21.56 15.42-15.58 20.25-40.46 19.89-40.46v2.47-1.89s4.15 24.31 19.56 39.89c12.66 12.8 33.15 19.56 40.07 21.56" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" clip-path="url(#e)" class="stars" />
             </clipPath>
             <clipPath id="r" transform="translate(255.55 469.08)">
-                <path d="M556-221.41v1.49a52.86 52.86 0 0 0-1.69-6.6c-2.06-5.59-5.7-13.59-11.19-19.35-5.75-5.5-13.75-9.14-19.35-11.19a52.86 52.86 0 0 0-6.6-1.69h1.48c4.33-1.26 17.16-5.49 25.09-13.5 9.65-9.76 12.68-25.34 12.45-25.34v1.54-1.19s2.6 15.22 12.25 25c7.93 8 20.76 12.25 25.09 13.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" clip-path="url(#f)" />
+                <path d="M556-221.41v1.49a52.86 52.86 0 0 0-1.69-6.6c-2.06-5.59-5.7-13.59-11.19-19.35-5.75-5.5-13.75-9.14-19.35-11.19a52.86 52.86 0 0 0-6.6-1.69h1.48c4.33-1.26 17.16-5.49 25.09-13.5 9.65-9.76 12.68-25.34 12.45-25.34v1.54-1.19s2.6 15.22 12.25 25c7.93 8 20.76 12.25 25.09 13.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" clip-path="url(#f)" class="stars" />
             </clipPath>
             <clipPath id="s" transform="translate(255.55 469.08)">
                 <path d="M395.77 424.61s-117.43 181.47-133.91 214.6l203.28 150.2 109.4-73.18L603 596.09l9.55-103.23-37.78-101.57L495 360.42z" fill="none" />
             </clipPath>
         </defs>
-        <circle cx="1190.97" cy="1121.78" r="1035.16" fill="#aaecfa" />
+        <circle class="base-circle" cx="1190.97" cy="1121.78" r="1035.16" fill="#aaecfa" />
         <circle cx="680.23" cy="174.54" r="17.82" transform="rotate(-23.12 1954.742 -215.592)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3" />
         <circle cx="831.05" cy="433.4" r="26.17" transform="rotate(-23.12 2105.603 43.301)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3" />
         <path d="M924.3 1805.08v-60.5a78.64 78.64 0 0 0 2 8.12c3.23 9.23 9.55 24 19.6 33.95a53.83 53.83 0 0 0 4.9 4.28 91.46 91.46 0 0 0 15.73 9.12 94.3 94.3 0 0 0 19.81 6.16h-3.62l1.26.37h2.37a84.41 84.41 0 0 0-10.54 2.69c-8.93 3.29-21.71 9.1-30.89 17.88-8.78 9.18-14.59 22-17.88 30.89a84.4 84.4 0 0 0-2.69 10.54v-2.37c-2-6.92-8.77-27.41-21.56-40.07-15.58-15.42-40.46-20.25-40.46-19.89h2.47-1.89s24.31-4.15 39.89-19.56c12.8-12.66 19.56-33.15 21.56-40.07z" fill="#fff" />
-        <g clip-path="url(#g)">
+        <g clip-path="url(#g)" class="stars">
             <path fill="#fff" d="M857.27 1739.58h134.02v134H857.27z" />
         </g>
         <circle cx="278.55" cy="1486.37" r="43.36" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3" />
@@ -207,43 +263,43 @@
         <circle cx="1307.38" cy="541.84" r="55.75" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3" />
         <circle cx="954.05" cy="1115.97" r="10.5" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3" />
         <circle cx="1527.17" cy="946.47" r="12.73" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3" />
-        <g clip-path="url(#h)">
+        <g clip-path="url(#h)" class="stars">
             <path fill="none" stroke="#ef2bbc" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M1423.03 505.58h134.02v134h-134.02z" />
         </g>
         <path d="M1490.06 512.58v-2a78.64 78.64 0 0 0 2 8.12c3.23 9.23 9.55 24 19.6 33.95a53.83 53.83 0 0 0 4.9 4.28 91.46 91.46 0 0 0 15.7 9.15 94.3 94.3 0 0 0 19.81 6.16h-3.62l1.26.37" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
         <path d="M1549.7 572.58h2.37a84.41 84.41 0 0 0-10.52 2.7c-8.93 3.29-21.71 9.1-30.89 17.88-8.78 9.18-14.59 22-17.88 30.89a84.4 84.4 0 0 0-2.69 10.54v-2.37c-2-6.92-8.77-27.41-21.56-40.07-15.58-15.42-40.46-20.25-40.46-19.89h2.47-1.89s24.31-4.15 39.89-19.56c12.8-12.66 19.56-33.15 21.56-40.07" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
         <circle cx="1560.14" cy="894.58" r="29" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3" />
         <path d="M2080.68 801.53v-60.54s.28 3.24 1 8.12c1.64 9.23 4.87 24 10 33.95a46.64 46.64 0 0 0 2.5 4.28 53.34 53.34 0 0 0 8 9.12 33.42 33.42 0 0 0 10.09 6.16h-1.85l.64.37h1.21a27.5 27.5 0 0 0-5.37 2.69 53.29 53.29 0 0 0-15.74 17.88c-4.47 9.18-7.43 22-9.11 30.89-1 6.19-1.37 10.54-1.37 10.54v-2.37c-1-6.92-4.47-27.41-11-40.07-7.94-15.42-20.62-20.25-20.62-19.89h1.26-1s12.39-4.15 20.33-19.56c6.52-12.66 10-33.15 11-40.07z" fill="#fff" />
-        <g clip-path="url(#i)">
+        <g clip-path="url(#i)" class="stars">
             <path fill="#fff" d="M2046.52 735.99h68.3v134h-68.3z" />
         </g>
-        <g clip-path="url(#j)">
+        <g clip-path="url(#j)" class="stars">
             <path fill="none" stroke="#ef2bbc" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M1987.61 823.63h83.93v83.92h-83.93z" />
         </g>
         <path d="M2029.55 828.01v-1.26a49.25 49.25 0 0 0 1.23 5.09c2 5.78 6 15 12.27 21.26a33.71 33.71 0 0 0 3.07 2.68 57.27 57.27 0 0 0 9.85 5.71 59.06 59.06 0 0 0 12.4 3.86h-2.27l.79.23" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
         <path d="M2066.93 865.58h1.48a52.86 52.86 0 0 0-6.6 1.69c-5.59 2.06-13.59 5.7-19.35 11.19-5.5 5.75-9.14 13.75-11.19 19.35a52.86 52.86 0 0 0-1.69 6.6v-1.49c-1.26-4.33-5.49-17.16-13.5-25.09-9.76-9.65-25.34-12.68-25.34-12.45h1.54-1.19s15.22-2.6 25-12.25c8-7.93 12.25-20.76 13.5-25.09" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
-        <g clip-path="url(#k)">
+        <g clip-path="url(#k)" class="stars">
             <path fill="none" stroke="#ef2bbc" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M294 1240.13h83.93v83.92H294z" />
         </g>
         <path d="M335.98 1244.51v-1.26a49.25 49.25 0 0 0 1.23 5.09c2 5.78 6 15 12.27 21.26a33.71 33.71 0 0 0 3.07 2.68 57.27 57.27 0 0 0 9.85 5.71 59.06 59.06 0 0 0 12.4 3.86h-2.25l.79.23" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
         <path d="M373.32 1282.08h1.48a52.86 52.86 0 0 0-6.6 1.69c-5.59 2.06-13.59 5.7-19.35 11.19-5.5 5.75-9.14 13.75-11.19 19.35a52.86 52.86 0 0 0-1.69 6.6v-1.49c-1.26-4.33-5.49-17.16-13.5-25.09-9.76-9.65-25.34-12.68-25.34-12.45h1.54-1.18s15.22-2.6 25-12.25c8-7.93 12.25-20.76 13.5-25.09" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
         <path d="M247.02 1212.73v-60.54a78.64 78.64 0 0 0 2 8.12c3.23 9.23 9.55 24 19.6 33.95a53.83 53.83 0 0 0 4.9 4.28 91.46 91.46 0 0 0 15.73 9.12 94.3 94.3 0 0 0 19.81 6.16h-3.66l1.26.37h2.37a84.41 84.41 0 0 0-10.54 2.69c-8.94 3.29-21.71 9.1-30.94 17.88-8.78 9.18-14.59 22-17.88 30.89a84.4 84.4 0 0 0-2.69 10.54v-2.37c-2-6.92-8.77-27.41-21.56-40.07-15.58-15.42-40.46-20.25-40.46-19.89h2.47-1.88s24.31-4.15 39.89-19.56c12.8-12.66 19.56-33.15 21.56-40.07z" fill="#fff" />
-        <g clip-path="url(#l)">
+        <g clip-path="url(#l)" class="stars">
             <path fill="#fff" d="M180 1147.19h134.02v134H180z" />
         </g>
         <path d="M1003.68 1917.32v-60.54a78.64 78.64 0 0 0 2 8.12c3.23 9.23 9.55 24 19.6 33.95a53.83 53.83 0 0 0 4.9 4.28 91.46 91.46 0 0 0 15.73 9.12 94.3 94.3 0 0 0 19.81 6.16h-3.62l1.26.37h2.37a84.41 84.41 0 0 0-10.54 2.69c-8.93 3.29-21.71 9.1-30.89 17.88-8.78 9.18-14.59 22-17.88 30.89a84.4 84.4 0 0 0-2.69 10.54v-2.37c-2-6.92-8.77-27.41-21.56-40.07-15.58-15.42-40.46-20.25-40.46-19.89h2.47-1.89s24.31-4.15 39.89-19.56c12.8-12.66 19.56-33.15 21.56-40.07z" fill="#fff" />
-        <g clip-path="url(#m)">
+        <g clip-path="url(#m)" class="stars">
             <path fill="#fff" d="M936.66 1851.78h134.02v134H936.66z" />
         </g>
         <g>
             <path d="M1048.8 1643.74V1609.08a45 45 0 0 0 1.12 4.65c1.85 5.29 5.47 13.74 11.22 19.44a30.83 30.83 0 0 0 2.8 2.45 52.37 52.37 0 0 0 9 5.22 54 54 0 0 0 11.34 3.53h-2.07l.72.21h1.36a48.33 48.33 0 0 0-6 1.54c-5.11 1.88-12.43 5.21-17.69 10.24-5 5.26-8.35 12.58-10.24 17.69a48.33 48.33 0 0 0-1.54 6v-1.37c-1.15-4-5-15.69-12.35-22.94-8.92-8.83-23.17-11.6-23.17-11.39h1.41-1.08s13.92-2.37 22.84-11.2c7.33-7.25 11.2-19 12.35-22.94z" fill="#fff" />
-            <g clip-path="url(#n)">
+            <g clip-path="url(#n)" class="stars">
                 <path fill="#fff" d="M1010.42 1606.21h76.75v76.73h-76.75z" />
             </g>
         </g>
         <circle cx="489.83" cy="1595.17" r="38.36" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3" />
         <g>
-            <g clip-path="url(#o)">
+            <g clip-path="url(#o)" class="stars">
                 <path fill="none" stroke="#ef2bbc" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M1187.84 824.25h83.93v83.92h-83.93z" />
             </g>
             <path d="M1229.81 828.63v-1.25a49.25 49.25 0 0 0 1.23 5.09c2 5.78 6 15 12.27 21.26a33.71 33.71 0 0 0 3.07 2.68 57.27 57.27 0 0 0 9.85 5.71 59.06 59.06 0 0 0 12.4 3.86h-2.27l.79.23" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
@@ -253,13 +309,13 @@
         <circle cx="2033.14" cy="1644.15" r="8.89" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3" />
         <g>
             <path d="M1124.35 1197.49v-34.68a45 45 0 0 0 1.12 4.65c1.85 5.29 5.47 13.74 11.22 19.44a30.83 30.83 0 0 0 2.8 2.45 52.37 52.37 0 0 0 9 5.22 54 54 0 0 0 11.36 3.51h-2.07l.72.21h1.36a48.33 48.33 0 0 0-6 1.54c-5.11 1.88-12.43 5.21-17.69 10.24-5 5.26-8.35 12.58-10.24 17.69a48.33 48.33 0 0 0-1.54 6v-1.37c-1.15-4-5-15.69-12.35-22.94-8.92-8.83-23.17-11.6-23.17-11.39h1.41-1.08s13.92-2.37 22.84-11.2c7.33-7.25 11.2-19 12.35-22.94z" fill="#fff" />
-            <g clip-path="url(#p)">
+            <g clip-path="url(#p)" class="stars">
                 <path fill="#fff" d="M1085.97 1159.97h76.75v76.73h-76.75z" />
             </g>
         </g>
         <circle cx="1711.3" cy="410.42" r="97.77" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3" />
         <g>
-            <g clip-path="url(#q)">
+            <g clip-path="url(#q)" class="stars">
                 <path fill="none" stroke="#ef2bbc" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M1421.35 159.63h134v134.02h-134z" />
             </g>
             <path d="M1548.35 226.65h2a78.64 78.64 0 0 0-8.12 2c-9.23 3.23-24 9.55-33.95 19.6a53.84 53.84 0 0 0-4.28 4.9 91.46 91.46 0 0 0-9.12 15.73 94.3 94.3 0 0 0-6.16 19.81v-3.62c-.14.46-.26.88-.37 1.26" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
@@ -267,7 +323,7 @@
         </g>
         <circle cx="917.95" cy="541.84" r="29" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3" />
         <g>
-            <g clip-path="url(#r)">
+            <g clip-path="url(#r)" class="stars">
                 <path fill="none" stroke="#ef2bbc" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M769.55 168.36h83.92v83.93h-83.92z" />
             </g>
             <path d="M849.09 210.33h1.25a49.25 49.25 0 0 0-5.09 1.23c-5.78 2-15 6-21.26 12.27a33.71 33.71 0 0 0-2.68 3.07 57.27 57.27 0 0 0-5.71 9.85 59.06 59.06 0 0 0-3.86 12.4v-2.27l-.23.79" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
