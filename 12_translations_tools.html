@@ -14,12 +14,16 @@
       font-family: 'Barlow Semi Condensed', Helvetica, Arial, sans-serif;
       text-transform: uppercase;
     }
-    h1 span {
+    h1 span, a {
       font-weight: 400;
       font-size: 1.3em;
       display: inline-block;
       width: 95vw;
       padding: 0;
+      color: #000;
+    }
+    a {
+      cursor: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='100px' height='100px' fill='#f22294' stroke='#fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='15' viewBox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve'%3E %3Cpath d='M126.44,104.07l-29-28.16,16.26-16.76a5.15,5.15,0,0,0-1.46-8.22L7.38.51a5.15,5.15,0,0,0-6.8,7l53.6,103.21a5.15,5.15,0,0,0,8.27,1.21L78.7,95.18l29,28.16a5.15,5.15,0,0,0,7.28-.11l11.52-11.88a5.15,5.15,0,0,0-.11-7.28Z'/%3E %3C/svg%3E"), pointer;
     }
     h1 span:nth-of-type(1):before, h1 span:nth-of-type(1):after {
       display: inline-block;
@@ -182,11 +186,14 @@
 
 
     <section class="tool-title">
-      <h1>
-        <span>The</span><br />
-        <span>Manga Translator's</span><br />
-        <span>Tools of the Trade</span>
-      </h1>
+      <a href="https://www.theoasg.com/articles/the-manga-translators-tools-trade/6182" target="_blank">
+        <h1>
+          <span>The</span><br />
+          <span>Manga Translator's</span><br />
+          <span>Tools of the Trade</span>
+        </h1>
+        <!-- <h2>By kami_nomi</h2> -->
+      </a>
     </section>
     <section class="tool-illustration">
     <svg data-name="translator-SVGbase copy" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2494.28 2300.08">
@@ -461,6 +468,14 @@
             </g>
         </g>
     </svg>
+    <!-- <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 124.79">
+      <title>cursor</title>
+      <g>
+        <path d="M126.44,104.07l-29-28.16,16.26-16.76a5.15,5.15,0,0,0-1.46-8.22L7.38.51a5.15,5.15,0,0,0-6.8,7l53.6,103.21a5.15,5.15,0,0,0,8.27,1.21L78.7,95.18l29,28.16a5.15,5.15,0,0,0,7.28-.11l11.52-11.88a5.15,5.15,0,0,0-.11-7.28Z" fill="#f22294"/>
+        <path d="M124.39,106.18,93.23,76l18.31-18.88a2.21,2.21,0,0,0-.63-3.52L6.1,3.16a2.21,2.21,0,0,0-2.91,3l53.6,103.21a2.21,2.21,0,0,0,3.54.52L78.64,91l31.15,30.21a2.21,2.21,0,0,0,3.12,0l11.52-11.88a2.21,2.21,0,0,0,0-3.12Z" fill="#fff"/>
+        <path d="M88.58,77.6a2.21,2.21,0,0,1,0-3.12l17.71-18.26L10.16,10,59.3,104.62,77,86.36a2.21,2.21,0,0,1,3.12,0l31.15,30.21,8.45-8.71Z" fill="#f4a6d4"/>
+      </g>
+    </svg>     -->
   </section>
   </body>
   <script src="library/anime.min.js"></script>
