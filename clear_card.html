@@ -6,6 +6,7 @@
     <style type="text/css">
     body {
       background-color: pink;
+      overflow: hidden;
     }
     .bg-sakura {
       border: 1px solid green;
@@ -16,23 +17,28 @@
     .flowerDiv {
       margin-top: -10em;
       margin-left: -15em;
-      opacity: .25;
+      opacity: .7;
+      transform: rotate(45deg);
     }
     .flowerDiv:nth-child(2n) {
-      opacity: .05;
+      opacity: .25;
+      transform: rotate(-27deg);
     }
     .flowerDiv:nth-child(3n) {
-      opacity: .1;
+      opacity: .05;
+      transform: rotate(12deg);
     }
     .flowerDiv:nth-child(5n) {
-      opacity: .15;
+      opacity: .3;
+      transform: rotate(-5deg);
     }
 
 
 
     section {
-      z-index: 0;
+      z-index: -15;
       left: 50;
+      top: 50;
     }
     div:last-child {
       z-index: 15;
@@ -40,10 +46,16 @@
     /* entire container, keeps perspective */
     .flip-container {
     	perspective: 1000px;
-      position: absolute;
       padding-top: .5em;
+      /* height: 100vh;
+      width: 100vw; */
+      /* position: absolute;
       display: block;
-      margin: 0 auto;
+      margin: 0 auto; */
+      /* display: flex;
+      justify-content: center;
+      align-items: center; */
+      position: relative;
     }
     	/* flip the pane when hovered */
     	.flip-container:hover .flipper, .flip-container.hover .flipper {
@@ -55,6 +67,11 @@
     	height: 480px;*/
       height: 45em;
       width: 20em;
+      /* margin: 0 auto; */
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     /* flip speed goes here */
@@ -85,21 +102,42 @@
     	transform: rotateY(180deg);
     }
     .glow-rotate-div {
-      border: 1px solid red;
+      /* border: 1px solid red; */
       width: 100vw;
-      position: absolute;
-      padding-top: .5em;
+      height: 90vh;
+      /* position: absolute; */
+      /* padding-top: .5em; */
+      /* position: absolute;
+      top: 50%;
+      left: 30%;
+      transform: translate(-50%, -50%); */
+      z-index: 2;
+      position: relative;
     }
     .glow-rotate {
+      z-index: 200;
       animation: infinite-flip 2s infinite linear;
-      height: 45em;
-      width: 20em;
+      /* height: 45em;
+      width: 20em; */
+      width: 25vw;
+      /* position: relative; */
+      z-index: 200;
+      position: absolute;
+      /* left: 39.5%; */
+      transform: translate(-50%, -50%);
       /*border-radius: 10px;
       box-shadow:
           inset 0 0 10px #fff,
           0 0 10px #ef2e7d,
           -5px 0 5px #fff,
           5px 0 15px #fff;   */
+    }
+    .glow-rotate-inside {
+      z-index: 200;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     @keyframes infinite-flip {
         from {transform: rotateY(0deg);}
@@ -119,10 +157,10 @@
 
     <section class="glow-rotate-div">
       <div class="glow-rotate">
-        <svg id="base" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129.14 288.34">
+        <svg class="glow-rotate-inside" id="base" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129.14 288.34">
           <title>clear-card-base3</title>
-          <rect x="0.25" width="128.64" height="287.84" rx="5" ry="5" fill="none" stroke="pink"
-       fill-opacity="0" stroke-opacity="0.8" />
+          <rect x="0.25" width="128.64" height="287.84" rx="5" ry="5" fill="none" stroke="white"
+       fill-opacity="0" stroke-opacity="1" />
         </svg>
       </div>
     </section>
