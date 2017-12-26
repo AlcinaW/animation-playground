@@ -17,11 +17,11 @@
     .flowerDiv {
       margin-top: -10em;
       margin-left: -15em;
-      opacity: .7;
+      opacity: .2;
       transform: rotate(45deg);
     }
     .flowerDiv:nth-child(2n) {
-      opacity: .25;
+      opacity: .1;
       transform: rotate(-27deg);
     }
     .flowerDiv:nth-child(3n) {
@@ -29,12 +29,9 @@
       transform: rotate(12deg);
     }
     .flowerDiv:nth-child(5n) {
-      opacity: .3;
+      opacity: .01;
       transform: rotate(-5deg);
     }
-
-
-
     section {
       z-index: -15;
       left: 50;
@@ -47,14 +44,6 @@
     .flip-container {
     	perspective: 1000px;
       padding-top: .5em;
-      /* height: 100vh;
-      width: 100vw; */
-      /* position: absolute;
-      display: block;
-      margin: 0 auto; */
-      /* display: flex;
-      justify-content: center;
-      align-items: center; */
       position: relative;
     }
     	/* flip the pane when hovered */
@@ -63,11 +52,8 @@
     	}
 
     .flip-container, .front, .back {
-    	/*width: 320px;
-    	height: 480px;*/
       height: 45em;
       width: 20em;
-      /* margin: 0 auto; */
       position: absolute;
       top: 50%;
       left: 50%;
@@ -78,7 +64,6 @@
     .flipper {
     	transition: 0.6s;
     	transform-style: preserve-3d;
-
     	position: relative;
     }
 
@@ -105,32 +90,16 @@
       /* border: 1px solid red; */
       width: 100vw;
       height: 90vh;
-      /* position: absolute; */
-      /* padding-top: .5em; */
-      /* position: absolute;
-      top: 50%;
-      left: 30%;
-      transform: translate(-50%, -50%); */
       z-index: 2;
       position: relative;
     }
     .glow-rotate {
       z-index: 200;
       animation: infinite-flip 2s infinite linear;
-      /* height: 45em;
-      width: 20em; */
       width: 25vw;
-      /* position: relative; */
       z-index: 200;
       position: absolute;
-      /* left: 39.5%; */
       transform: translate(-50%, -50%);
-      /*border-radius: 10px;
-      box-shadow:
-          inset 0 0 10px #fff,
-          0 0 10px #ef2e7d,
-          -5px 0 5px #fff,
-          5px 0 15px #fff;   */
     }
     .glow-rotate-inside {
       z-index: 200;
@@ -143,14 +112,14 @@
         from {transform: rotateY(0deg);}
         to {transform: rotateY(360deg);}
     }
-    /*.glow-rotate svg {
+    /* .glow-rotate svg {
       border-radius: 10px;
       box-shadow:
           inset 0 0 10px #fff,
           0 0 10px #fff,
           -5px 0 5px #fff,
           5px 0 15px #fff;
-    }*/
+    } */
     </style>
   </head>
   <body>
@@ -196,14 +165,9 @@
                 </g>
               </g>
             </svg>
-
-
       			<!-- front content -->
       		</div>
       		<div class="back">
-            <!-- <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="100" r="100"/>
-            </svg> -->
             <svg id="siege" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129.14 288.34">
               <title>clear-card-base2</title>
               <g>
