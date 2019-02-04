@@ -14,5 +14,5 @@ SVG and animation projects
 10. "Ribbon Morph" (SVG, CSS, GSAP) - [Codepen Demo](https://codepen.io/AlcinaW/full/EXKyxR)
 11. "Pocky Loader" (SVG progress bar, CSS) - [Codepen Demo](https://codepen.io/AlcinaW/full/zPBKXB)
 12. "The Manga Translator's Tools of the Trade" (SVG, CSS, based on an illustration I created for [TheOASG](https://www.theoasg.com/articles/the-manga-translators-tools-trade/6182)) - [Codepen Demo](https://codepen.io/AlcinaW/full/YYPgdK)
-13. "Cherry Blossom Pattern: Clear Card Siege" (SVG, CSS, JS) -  [Codepen demo](https://codepen.io/AlcinaW/full/jYyEQg/) // [Alternate demo](https://alcinaw.github.io/demos/13_clear_card_v2.html)
+13. "Cherry Blossom Pattern: Clear Card Siege" (SVG, CSS, JS) -  [Codepen demo](https://codepen.io/AlcinaW/full/jYyEQg/) // [Codepen Demo V2] (https://codepen.io/AlcinaW/full/wNeeyQ)
 14. "Star Pattern V2" (SVG pattern generation, CSS, JS) - [Codepen Demo](https://codepen.io/AlcinaW/full/KZQBrG/)
