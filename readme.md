@@ -16,3 +16,4 @@ SVG and animation projects
 12. "The Manga Translator's Tools of the Trade" (SVG, CSS, based on an illustration I created for [TheOASG](https://www.theoasg.com/articles/the-manga-translators-tools-trade/6182)) - [Codepen Demo](https://codepen.io/AlcinaW/full/YYPgdK)
 13. "Cherry Blossom Pattern: Clear Card Siege" (SVG, CSS, JS) -  [Codepen demo](https://codepen.io/AlcinaW/full/jYyEQg/) // [Codepen Demo V2](https://codepen.io/AlcinaW/full/wNeeyQ)
 14. "Star Pattern V2" (SVG pattern generation, CSS, JS) - [Codepen Demo](https://codepen.io/AlcinaW/full/KZQBrG/)
+15. "UFO Cat" (SVG, ScrollMagic, GSAP), based on Dev Ed's [Youtube tutorial](https://youtu.be/fR0tHI0nFYk) - [Codepen Demo](https://codepen.io/AlcinaW/full/rRwxJR)

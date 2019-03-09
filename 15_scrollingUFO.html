@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SVG UFO ScrollMagic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script src="app.js"></script> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-size: 16px;
+        }
+        p, h1, h2, a {
+            color: white;
+        }
+        header, footer {
+            height: 50vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            text-align: center;
+        }
+        header {
+            background: #171425
+            /* background-image: linear-gradient(4deg, #4e4376 0%,#171425 100%); */
+        }
+        .animation {
+            height: 100vh;
+            background: #171425;
+            /* background-image: linear-gradient(-10deg, #171425 0%, #4e4376 100%); */
+            overflow: hidden;
+            position: relative;
+        }
+        footer {
+            background: #171425
+            /* background-image: linear-gradient(-20deg, #4e4376 0%, #171425 100%); */
+        }
+        .ufo-cat {
+            height: 9em;
+            position: absolute;
+            top: 50%;
+            left: -20%;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="header-attribution">
+            <h1>Scroll!</h1>
+            <p>Based on this Dev Ed's "<a href="https://youtu.be/fR0tHI0nFYk" target="_blank" rel="noopener noreferrer">Javascript Scroll Animation Tutorial | GSAP and ScrollMagic Tutorial"</a></p>
+        </div>
+    </header>
+    
+    <section class="animation">
+        <img class="ufo-cat" src="media/15_UFOcat.svg" alt="cat in a flying saucer">
+    </section>
+
+    <footer>
+       
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/BezierPlugin.min.js"></script>
+
+    <script>
+        //object with curvulance using bezier library
+        const flightPath = {
+            curviness: 1.25,
+            autoRotate: true,
+            //points to animate to
+            values: [
+                {x: 100, y: -20 },
+                {x: 300, y: 10 },
+                {x: 500, y: 100 }, 
+                {x: 750, y: -100 }, 
+                {x: 400, y: -50 }, 
+                {x: 600, y: 100 }, 
+                {x: 800, y: 0 }, 
+                {x: window.innerWidth, y: -350 }
+            ] 
+        }
+
+        const tween = new TimelineLite();
+
+        tween.add(
+            TweenLite.to('.ufo-cat', 1, {
+                bezier: flightPath, 
+                ease: Power1.easeInOut
+            })
+        );
+        //define controller to ScrollMagic
+        const controller = new ScrollMagic.Controller();
+        //define parameter as an object 
+        const scene = new ScrollMagic.Scene({
+            //where to trigger?
+            triggerElement: '.animation', 
+            duration: 750,
+            //move trigger to top 
+            triggerHook: 0
+        })
+            //GSAP plugin to setTween
+            .setTween(tween)
+            // .addIndicators()
+            //stick section until animation is complete
+            .setPin('.animation')
+            .addTo(controller);
+    </script>
+</body>
+</html>
