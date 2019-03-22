@@ -1,6 +1,6 @@
-# SVG and animation
+# SVG, CSS, and animation
 
-SVG and animation projects
+SVG and CSS animation projects
 
 1. "So Many Routes" (SVG, CSS, GSAP) - [Codepen demo](https://codepen.io/AlcinaW/full/PGrmEW)
 2. "Chatime && Code" (SVG, CSS) - [Codepen demo](https://codepen.io/AlcinaW/full/dOjJNb)
@@ -18,3 +18,4 @@ SVG and animation projects
 14. "Star Pattern V2" (SVG pattern generation, CSS, JS) - [Codepen Demo](https://codepen.io/AlcinaW/full/KZQBrG/)
 15. "UFO Cat" (SVG, ScrollMagic, GSAP), based on Dev Ed's [Youtube tutorial](https://youtu.be/fR0tHI0nFYk) - [Codepen Demo](https://codepen.io/AlcinaW/full/rRwxJR)
 16. "Animating Checkbox" (CSS Grid, HTML and CSS form validation) - [Codepen Demo](https://codepen.io/AlcinaW/full/rRKyzg)
+17. "Detective Pre-loader V1" (SVG, CSSGrid, CSS), inspired by Persona 5 - [Codepen Demo](https://codepen.io/AlcinaW/full/YgdONv)
