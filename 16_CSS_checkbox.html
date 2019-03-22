@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>16 - CSS grid and HTML form validation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 16px;
+            font-family: "Open Sans", sans-serif;
+            background-color: #d7d7d7;
+        }
+
+        /** Center form vertically and horizontally on page **/
+        .newsletter-signup {
+            display: -ms-grid;
+            display: grid;
+            height: 100vh;
+            -ms-grid-columns: (1fr)[3];
+            grid-template-columns: repeat(3, 1fr);
+            -ms-grid-rows: (1fr)[3];
+            grid-template-rows: repeat(3, 1fr);
+            justify-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            grid-template-areas: ". . . "". form ."". . .";
+        }
+
+        /** Form styling **/
+        /** To style the checkbox, input will need to be visually hidden **/
+        form {
+            -webkit-box-shadow: 0px 0px 11px 0px #a5a4a2;
+            box-shadow: 0px 0px 11px 0px #a5a4a2;
+            -ms-grid-row: 2;
+            -ms-grid-column: 2;
+            grid-area: form;
+            display: -ms-grid;
+            display: grid;
+            grid-gap: 1.5em;
+            background-color: white;
+            border-radius: 0.3em;
+            padding: 3em;
+        }
+
+        input {
+            border: 1px solid #f4f4f4;
+            background-color: #f8f8f8;
+            border-radius: 0.2em;
+            -ms-grid-column-align: stretch;
+            justify-self: stretch;
+        }
+
+        /** Text and email inputs **/
+        input[type="text"],
+        input[type="email"] {
+            font-size: 2rem;
+            line-height: 1.2;
+            /* justify-self: stretch; */
+            width: 100%;
+        }
+
+        /** Focus styles for text and email inputs only **/
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            border: 1px solid #212121;
+        }
+
+        input[type="text"]:valid,
+        input[type="email"]:valid {
+            border: 1px solid teal;
+        }
+
+        /** Styling checkbox inputs **/
+        input[type=checkbox]+label:before {
+            border: 1px solid #f4f4f4;
+            background-color: #f8f8f8;
+            border-radius: 0.2em;
+            display: block;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            float: left;
+            width: 1.5em;
+            height: 1.5em;
+            cursor: pointer;
+            text-align: center;
+            -webkit-transition: all .1s ease-out;
+            transition: all .1s ease-out;
+            /** Checkmark symbol for when checked **/
+            content: "\002713";
+            font-weight: bold;
+            line-height: 1.2;
+            color: rgba(0, 0, 255, 0);
+            margin-right: .4em;
+        }
+
+        input[type=checkbox]:checked+label:before {
+            color: rgba(0, 0, 255, 0);
+            line-height: 1.2;
+            text-shadow: 0.05em 0 0 teal, -0.05em 0 0 teal;
+        }
+
+        input[type=checkbox]:focus+label {
+            outline: 1px dotted #d7d7d7;
+        }
+
+        input[type=checkbox]:focus+label:before {
+            border: 1px solid #212121;
+        }
+
+        /** Submit button **/
+        .submit-input {
+            display: -ms-grid;
+            display: grid;
+        }
+
+        button {
+            -ms-grid-column-align: center;
+            justify-self: center;
+            -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+            text-transform: uppercase;
+            font-family: "Open Sans", sans-serif;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 0;
+            /* contrast error between #f45226 and white text with small text */
+            background: #f45226;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border-radius: 0.5em;
+            padding: .5em 3em;
+        }
+
+        button:hover,
+        button:focus,
+        button:active {
+            -webkit-transition: background-color 0.3s ease-in-out;
+            transition: background-color 0.3s ease-in-out;
+            background-color: #99351a;
+        }
+
+        /** Visually hidden for checkboxes **/
+        .visuallyhidden {
+            position: absolute;
+            top: auto;
+            overflow: hidden;
+            clip: rect(1px 1px 1px 1px);
+            clip: rect(1px, 1px, 1px, 1px);
+            width: 1px;
+            height: 1px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Checkbox solution based on Adrian Roselli's blog post Under-Engineered Custom Radio Buttons and Checkboxes: http://adrianroselli.com/2017/05/under-engineered-custom-radio-buttons-and-checkboxen.html -->
+    <!-- In the future, because the checkbox can be shown or hidden depending on :pseudo-selector state, can use before/after to show (?) -->
+    <section class="newsletter-signup">
+        <form action="#">
+            <h1>Sign up for the newsletter</h1>
+            <p class="text-input">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required>
+            </p>
+            <p class="text-input">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </p>
+            <p class="checkbox-input">
+                <!-- If the checkbox is required, how to display the error in an accessible way? -->
+                <!-- Possible to style this without float?-->
+                <input type="checkbox" name="agreement" id="agreement" class="visuallyhidden">
+                <label for="agreement">I agree to everything that will happen after I submit this form. Take all my
+                    data!</label>
+            </p>
+            <p class="submit-input">
+                <button type="submit">Submit</button>
+            </p>
+        </form>
+    </section>
+
+</body>
+
+</html>
