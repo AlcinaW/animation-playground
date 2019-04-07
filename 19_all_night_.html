@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Stars all night</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .starBlock {
+            position: relative;
+        }
+
+        .star {
+            width: 100px;
+            height: 100px;
+            /* margin-left: -150px;
+            margin-top: -70px; */
+            background: white;
+            /* border-radius: 100px 0 0 100px; */
+        }
+
+        .star:before {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 0;
+            top: 50px;
+            background: rebeccapurple;
+            border-radius: 0 50px 0 0;
+            /* box-shadow: 88px 31px 0 orange; */
+        }
+
+        .star:after {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 50px;
+            bottom: 50px;
+            background: rebeccapurple;
+            border-radius: 0 100px 0 0;
+            /* box-shadow: -88px -31px 0 slateblue; */
+            transform: rotate(180deg);
+        }
+
+        .star2 {
+            box-sizing: border-box;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 0;
+        }
+
+        .star2:before {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 50px;
+            top: 50px;
+            background: rebeccapurple;
+            border-radius: 0 50px 0 0;
+            /* box-shadow: -32px 88px 0 orange; */
+            transform: rotate(-90deg);
+        }
+
+        .star2:after {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 0;
+            bottom: 50px;
+            background: rebeccapurple;
+            border-radius: 100px 0 0 0;
+            /* box-shadow: -88px -31px 0 slateblue; */
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    sdfsdf
+    <div class="starBlock">
+        <div class="star"></div>
+        <div class="star2"></div>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+
+</html>
