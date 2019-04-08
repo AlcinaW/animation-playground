@@ -1,7 +1,7 @@
 /* VARIABLES*/
 @halfWidth: 50px;
 @fullWidth: 100px;
-@height: @width + 10px;
+@height: @halfWidth + 10px;
 
 /* reset */
 * {
@@ -11,6 +11,7 @@
 }
 body {
     font-size: 16px;
+    background-color: papayawhip;
 }
 /* MIXINS */
 .displayBlock {
@@ -133,19 +134,20 @@ body {
     .star {
         position: relative;
         overflow: hidden;
-        height: @fullWidth;
-        width: @fullWidth;
-        
+        height: 100px;
+        width: 100px;
+        border: 1px solid red;
+        &:before {
+            box-shadow: 0 0 0 100px #fff;
+            position: absolute;
+            border-radius: 100%;
+            margin-left: -60px;
+            height: 200px;
+            content: '';
+            width: 120px;
+            left: 50%;
+            bottom: 0;
+          } 
     }
-    &:before {
-        box-shadow: 0 0 0 100px #fff;
-        position: absolute;
-        border-radius: 100%;
-        margin-left: -60px;
-        height: 200px;
-        content: '';
-        width: 120px;
-        left: 50%;
-        bottom: 0;
-      } 
+
 }

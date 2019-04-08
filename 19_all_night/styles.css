@@ -5,6 +5,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-size: 16px;
+  background-color: papayawhip;
+}
 /* MIXINS */
 .displayBlock {
   display: block;
@@ -123,4 +127,22 @@
   border-bottom: 70px solid red;
   border-left: 100px solid transparent;
   transform: rotate(-70deg);
+}
+.starBlock__three .star {
+  position: relative;
+  overflow: hidden;
+  height: 100px;
+  width: 100px;
+  border: 1px solid red;
+}
+.starBlock__three .star:before {
+  box-shadow: 0 0 0 100px #fff;
+  position: absolute;
+  border-radius: 100%;
+  margin-left: -60px;
+  height: 200px;
+  content: '';
+  width: 120px;
+  left: 50%;
+  bottom: 0;
 }
