@@ -1,0 +1,151 @@
+/* VARIABLES*/
+@halfWidth: 50px;
+@fullWidth: 100px;
+@height: @width + 10px;
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+}
+/* MIXINS */
+.displayBlock {
+    display: block;
+    content: '';
+    position: absolute;
+}
+/* all stars are relative so the divs inside can use absolute */
+.starBlock {
+    position: relative;
+}
+/* inverted star */
+.starBlock__one {
+    .star {
+        width: @fullWidth;
+        height: @fullWidth;
+        /* margin-left: -150px;
+        margin-top: -70px; */
+        background: white;
+        /* border-radius: 100px 0 0 100px; */
+        &:before {
+            .displayBlock();
+            width: @halfWidth;
+            height: @halfWidth;
+            left: 0;
+            top: 50px;
+            background: rebeccapurple;
+            border-radius: 0 50px 0 0;
+            /* box-shadow: 88px 31px 0 orange; */
+        }
+        
+        &:after {
+            .displayBlock();
+            width: @halfWidth;
+            height: @halfWidth;
+            left: 50px;
+            bottom: 50px;
+            background: rebeccapurple;
+            border-radius: 0 100px 0 0;
+            /* box-shadow: -88px -31px 0 slateblue; */
+            transform: rotate(180deg);
+        }
+    }
+    
+/* 5-pointed star via CSS Tricks https://css-tricks.com/the-shapes-of-css/ */
+    .star-two {
+        box-sizing: border-box;
+        position: absolute;
+        width: @fullWidth;
+        height: @fullWidth;
+        top: 0;
+        &:before {
+            .displayBlock();
+            width: @halfWidth;
+            height: @halfWidth;
+            left: 50px;
+            top: 50px;
+            background: rebeccapurple;
+            border-radius: 0 50px 0 0;
+            /* box-shadow: -32px 88px 0 orange; */
+            transform: rotate(-90deg);
+        }
+        
+       &:after {
+            .displayBlock();
+            width: @halfWidth;
+            height: @halfWidth;
+            left: 0;
+            bottom: 50px;
+            background: rebeccapurple;
+            border-radius: 100px 0 0 0;
+            /* box-shadow: -88px -31px 0 slateblue; */
+            transform: rotate(180deg);
+        }
+    }
+    
+
+}
+
+.starBlock__two {
+    .star {
+        margin: 50px 0;
+        position: relative;
+        display: block;
+        color: red;
+        width: 0px;
+        height: 0px;
+        border-right: 100px solid transparent;
+        border-bottom: 70px solid red;
+        border-left: 100px solid transparent;
+        transform: rotate(35deg);
+        &:before {
+            border-bottom: 80px solid red;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            .displayBlock();
+            height: 0;
+            width: 0;
+            top: -45px;
+            left: -65px;
+            transform: rotate(-35deg);
+        }
+        
+        &:after {
+            .displayBlock();
+            color: red;
+            top: 3px;
+            left: -105px;
+            width: 0px;
+            height: 0px;
+            border-right: 100px solid transparent;
+            border-bottom: 70px solid red;
+            border-left: 100px solid transparent;
+            transform: rotate(-70deg);
+        }
+    }
+}
+
+.starBlock__three {
+    .star {
+        position: relative;
+        overflow: hidden;
+        height: @fullWidth;
+        width: @fullWidth;
+        
+    }
+    &:before {
+        box-shadow: 0 0 0 100px #fff;
+        position: absolute;
+        border-radius: 100%;
+        margin-left: -60px;
+        height: 200px;
+        content: '';
+        width: 120px;
+        left: 50%;
+        bottom: 0;
+      } 
+}

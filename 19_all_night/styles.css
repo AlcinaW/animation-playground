@@ -1,0 +1,126 @@
+/* VARIABLES*/
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* MIXINS */
+.displayBlock {
+  display: block;
+  content: '';
+  position: absolute;
+}
+/* all stars are relative so the divs inside can use absolute */
+.starBlock {
+  position: relative;
+}
+/* inverted star */
+.starBlock__one {
+  /* 5-pointed star via CSS Tricks https://css-tricks.com/the-shapes-of-css/ */
+}
+.starBlock__one .star {
+  width: 100px;
+  height: 100px;
+  /* margin-left: -150px;
+        margin-top: -70px; */
+  background: white;
+  /* border-radius: 100px 0 0 100px; */
+}
+.starBlock__one .star:before {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 0;
+  top: 50px;
+  background: rebeccapurple;
+  border-radius: 0 50px 0 0;
+  /* box-shadow: 88px 31px 0 orange; */
+}
+.starBlock__one .star:after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 50px;
+  bottom: 50px;
+  background: rebeccapurple;
+  border-radius: 0 100px 0 0;
+  /* box-shadow: -88px -31px 0 slateblue; */
+  transform: rotate(180deg);
+}
+.starBlock__one .star-two {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0;
+}
+.starBlock__one .star-two:before {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 50px;
+  top: 50px;
+  background: rebeccapurple;
+  border-radius: 0 50px 0 0;
+  /* box-shadow: -32px 88px 0 orange; */
+  transform: rotate(-90deg);
+}
+.starBlock__one .star-two:after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 0;
+  bottom: 50px;
+  background: rebeccapurple;
+  border-radius: 100px 0 0 0;
+  /* box-shadow: -88px -31px 0 slateblue; */
+  transform: rotate(180deg);
+}
+.starBlock__two .star {
+  margin: 50px 0;
+  position: relative;
+  display: block;
+  color: red;
+  width: 0px;
+  height: 0px;
+  border-right: 100px solid transparent;
+  border-bottom: 70px solid red;
+  border-left: 100px solid transparent;
+  transform: rotate(35deg);
+}
+.starBlock__two .star:before {
+  border-bottom: 80px solid red;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  display: block;
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -45px;
+  left: -65px;
+  transform: rotate(-35deg);
+}
+.starBlock__two .star:after {
+  display: block;
+  content: '';
+  position: absolute;
+  color: red;
+  top: 3px;
+  left: -105px;
+  width: 0px;
+  height: 0px;
+  border-right: 100px solid transparent;
+  border-bottom: 70px solid red;
+  border-left: 100px solid transparent;
+  transform: rotate(-70deg);
+}
