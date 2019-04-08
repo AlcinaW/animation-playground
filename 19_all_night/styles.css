@@ -136,7 +136,7 @@ body {
   border: 1px solid red;
 }
 .starBlock__three .star:before {
-  box-shadow: 0 0 0 100px #fff;
+  box-shadow: 0 0 0 100px  pink;
   position: absolute;
   border-radius: 100%;
   margin-left: -60px;
