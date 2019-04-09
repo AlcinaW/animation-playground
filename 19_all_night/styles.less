@@ -22,6 +22,10 @@ body {
 /* all stars are relative so the divs inside can use absolute */
 .starBlock {
     position: relative;
+    display: inline-block;
+    // height: 300px;
+    // width: 300px;
+    border: 1px solid red;
 }
 /* inverted star */
 .starBlock__one {
@@ -92,19 +96,21 @@ body {
 }
 
 .starBlock__two {
+    position: relative;
+    padding: 2em;
     .star {
         margin: 50px 0;
         position: relative;
         display: block;
-        color: red;
+        color: aliceblue;
         width: 0px;
         height: 0px;
         border-right: 100px solid transparent;
-        border-bottom: 70px solid red;
+        border-bottom: 70px solid aliceblue;
         border-left: 100px solid transparent;
         transform: rotate(35deg);
         &:before {
-            border-bottom: 80px solid red;
+            border-bottom: 80px solid aliceblue;
             border-left: 30px solid transparent;
             border-right: 30px solid transparent;
             .displayBlock();
@@ -117,13 +123,13 @@ body {
         
         &:after {
             .displayBlock();
-            color: red;
+            color: aliceblue;;
             top: 3px;
             left: -105px;
             width: 0px;
             height: 0px;
             border-right: 100px solid transparent;
-            border-bottom: 70px solid red;
+            border-bottom: 70px solid aliceblue;
             border-left: 100px solid transparent;
             transform: rotate(-70deg);
         }
@@ -131,23 +137,57 @@ body {
 }
 
 .starBlock__three {
-    .star {
-        position: relative;
-        overflow: hidden;
-        height: 100px;
-        width: 100px;
-        border: 1px solid red;
-        &:before {
-            box-shadow: 0 0 0 100px  pink;
-            position: absolute;
-            border-radius: 100%;
-            margin-left: -60px;
-            height: 200px;
-            content: '';
-            width: 120px;
-            left: 50%;
-            bottom: 0;
-          } 
+    position: relative;
+    .starGroup {
+        display: flex;
+        max-width: 200px;
+        flex-wrap: wrap;
+        .star {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+           
+            &:before {
+                box-shadow: 0 0 0 100px rgba(56, 56, 56, 0.6);
+                position: absolute;
+                border-radius: 100%;
+                margin-left: -50px;
+                height: 200px;
+                content: '';
+                width: 181px;
+                left: 50%;
+                bottom: 0;
+              } 
+        }
+        .corner-one {
+            transform: rotate(-90deg);
+        }
+        .corner-three {
+            transform: rotate(-180deg);
+        }
+        .corner-four {
+            transform: rotate(90deg);
+        }
     }
-
 }
+.starBlock__four {
+    .star {
+        width: 200px;
+        height: 200px;
+        position: relative; 
+        --circle: radial-gradient(circle, white 60px, pink 60px);
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+            background-image: var(--circle), var(--circle), var(--circle), var(--circle);
+            background-size: 100px 115px;
+            background-position: -50% -85%, 140% -42%, -40% 140%, 140% 140%;
+          }
+    }
+}
+
