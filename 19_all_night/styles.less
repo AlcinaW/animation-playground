@@ -1,0 +1,185 @@
+/* VARIABLES*/
+@halfWidth: 50px;
+@fullWidth: 100px;
+@height: @halfWidth + 10px;
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+    background-color: papayawhip;
+}
+/* MIXINS */
+.displayBlock {
+    display: block;
+    content: '';
+    position: absolute;
+}
+/* all stars are relative so the divs inside can use absolute */
+.starBlock {
+    position: relative;
+    display: inline-block;
+    border: 1px solid red;
+}
+/* inverted star */
+.starBlock__one {
+    .star {
+        width: @fullWidth;
+        height: @fullWidth;
+        background: white;
+        &:before {
+            .displayBlock();
+            width: @halfWidth;
+            height: @halfWidth;
+            left: 0;
+            top: 50px;
+            background: rebeccapurple;
+            border-radius: 0 50px 0 0;
+            /* box-shadow: 88px 31px 0 orange; */
+        }
+        
+        &:after {
+            .displayBlock();
+            width: @halfWidth;
+            height: @halfWidth;
+            left: 50px;
+            bottom: 50px;
+            background: rebeccapurple;
+            border-radius: 0 100px 0 0;
+            transform: rotate(180deg);
+        }
+    }
+    
+/* 5-pointed star via CSS Tricks https://css-tricks.com/the-shapes-of-css/ */
+    .star-two {
+        box-sizing: border-box;
+        position: absolute;
+        width: @fullWidth;
+        height: @fullWidth;
+        top: 0;
+        &:before {
+            .displayBlock();
+            width: @halfWidth;
+            height: @halfWidth;
+            left: 50px;
+            top: 50px;
+            background: rebeccapurple;
+            border-radius: 0 50px 0 0;
+            transform: rotate(-90deg);
+        }
+        
+       &:after {
+            .displayBlock();
+            width: @halfWidth;
+            height: @halfWidth;
+            left: 0;
+            bottom: 50px;
+            background: rebeccapurple;
+            border-radius: 100px 0 0 0;
+            transform: rotate(180deg);
+        }
+    }
+    
+
+}
+
+.starBlock__two {
+    position: relative;
+    padding: 2em;
+    .star {
+        margin: 50px 0;
+        position: relative;
+        display: block;
+        color: aliceblue;
+        width: 0px;
+        height: 0px;
+        border-right: 100px solid transparent;
+        border-bottom: 70px solid aliceblue;
+        border-left: 100px solid transparent;
+        transform: rotate(35deg);
+        &:before {
+            border-bottom: 80px solid aliceblue;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            .displayBlock();
+            height: 0;
+            width: 0;
+            top: -45px;
+            left: -65px;
+            transform: rotate(-35deg);
+        }
+        
+        &:after {
+            .displayBlock();
+            color: aliceblue;;
+            top: 3px;
+            left: -105px;
+            width: 0px;
+            height: 0px;
+            border-right: 100px solid transparent;
+            border-bottom: 70px solid aliceblue;
+            border-left: 100px solid transparent;
+            transform: rotate(-70deg);
+        }
+    }
+}
+
+.starBlock__three {
+    position: relative;
+    .starGroup {
+        display: flex;
+        max-width: 200px;
+        flex-wrap: wrap;
+        .star {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+           
+            &:before {
+                box-shadow: 0 0 0 100px rgba(56, 56, 56, 0.6);
+                position: absolute;
+                border-radius: 100%;
+                margin-left: -50px;
+                height: 200px;
+                content: '';
+                width: 181px;
+                left: 50%;
+                bottom: 0;
+              } 
+        }
+        .corner-one {
+            transform: rotate(-90deg);
+        }
+        .corner-three {
+            transform: rotate(-180deg);
+        }
+        .corner-four {
+            transform: rotate(90deg);
+        }
+    }
+}
+.starBlock__four {
+    .star {
+        width: 200px;
+        height: 200px;
+        position: relative; 
+        --circle: radial-gradient(circle, white 60px, pink 60px);
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+            background-image: var(--circle), var(--circle), var(--circle), var(--circle);
+            background-size: 100px 115px;
+            background-position: -50% -85%, 140% -42%, -40% 140%, 140% 140%;
+          }
+    }
+}
+

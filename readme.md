@@ -20,3 +20,4 @@ SVG and CSS animation projects
 16. "Animating Checkbox" (CSS Grid, HTML and CSS form validation) - [Codepen Demo](https://codepen.io/AlcinaW/full/rRKyzg)
 17. "Pre-loader: Detective ver." (SVG, CSS) 
 18. "Pre-loader: Kid ver." (SVG, CSS), inspired by Persona 5 - [Codepen Demo](https://codepen.io/AlcinaW/full/YgdONv)
+19. "All the stars in the sky" (CSS shapes) 
