@@ -7,27 +7,51 @@
     <title>Color radial</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        p {
+        * {
             text-align: center;
             letter-spacing: 1em;
         }
 
-        .circle {
-            width: 100px;
-            height: 100px;
-            border-radius: 50px;
-            border: 2px solid pink;
+        .inputArea {
+            height: 15em;
+            width: 15em;
+            background: #4a9cdf;
+            text-align: center;
+            border-radius: 50%;
+
+            display: flex;
+            align-content: center;
         }
 
-        .circle:before {
-            content: "";
+        .inputArea ul {
+            list-style: none;
+            padding: 0;
+
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .inputArea li {
+            border: 1px solid white;
+            flex: 1;
+            width: 15em;
+            color: white;
+            padding: .5em 0;
+        }
+
+        .inputArea a {
             display: block;
-            height: 100px;
-            border-radius: 50px;
-            height: 100px;
-            width: 100px;
-            border-bottom: 2px solid black;
-            z-index: 4;
+            width: 100%;
+            color: white;
+        }
+
+        .inputArea a:hover,
+        .inputArea a:focus {
+            background: white;
+            color: #4a9cdf;
         }
 
         path {
@@ -42,11 +66,6 @@
 
 <body>
     <section class="letterGroups">
-        <p id="word">
-            Colour dial
-        </p>
-        <div class="circle">
-        </div>
         <div class="circle-text">
             <svg viewBox="0 0 500 500">
                 <path id="curve" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97" />
@@ -57,6 +76,14 @@
                 </text>
             </svg>
         </div>
+    </section>
+    <section class="inputArea">
+        <ul>
+            <li><a href="#">A</a></li>
+            <li><a href="#">b</a></li>
+            <li><a href="#">c</a></li>
+            <li><a href="#">d</a></li>
+        </ul>
     </section>
     <script>
         let text = document.getElementById("word");
