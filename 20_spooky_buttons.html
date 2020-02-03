@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spooky</title>
+    <style>
+        /**** CSS reset values ***/
+        /** Based on "Normalize CSS or CSS Reset?!" by Elad Shechter https://medium.com/@elad/normalize-css-or-css-reset-9d75175c5d1e **/
+        *, *::before, *::after{ box-sizing: border-box; }
+        a { text-decoration:none; color: inherit; cursor: pointer; }
+        button { background-color: transparent; color: inherit; border-width: 0; padding: 0; cursor: pointer;}
+        figure { margin: 0; }
+        input::-moz-focus-inner { border: 0; padding: 0; margin: 0; }
+        ul, ol, dd{ margin:0; padding: 0; list-style: none; }
+        h1, h2, h3, h4, h5, h6{ margin: 0; font-size: inherit; font-weight: inherit;}
+        p { margin: 0; }
+        cite { font-style: normal; }
+        fieldset{ border-width: 0; padding: 0; margin: 0; }
+        /*** CSS variables ***/
+        :root {
+            --primary-color: pink;
+            --secondary-color: purple;
+            --main-bg-color: indigo; 
+            --secondary-bg-color: blueviolet; 
+            --tertiary-bg-color: mediumpurple;
+            --default-text-color: white; 
+
+            --primary-button-bg: white; 
+            --primary-button-text: #333131; 
+            --primary-button-bg-hover: black; 
+        }
+        body, html {
+            font-size: 16px;
+            font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+            margin: 0; 
+            padding: 0;
+            color: var(--default-text-color);
+        }
+        h1 {
+            font-size: 1.2rem; 
+            line-height: 1.2;
+        }
+        button {
+            text-transform: capitalize;
+            letter-spacing: .5px;
+            font-size: 1rem;
+            line-height: 1.1;
+            background-color: white;
+            color: var(--primary-button-text);
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 1em 3em;
+            box-shadow: 6px 6px 0px 0px rgba(127, 67, 71, 1);
+            border: 1px solid transparent;
+        }
+        article {
+            display: flex; 
+            flex-direction: column;
+        }
+        article > article {
+            flex-grow: 1;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+        button::after {
+            content: "";
+        }
+        button::hover, button::focus {
+            background-color: 
+        }
+        button:hover::after, button:focus::after {
+            animation: shadow 1s forwards;
+        }
+        .story__time {
+            min-height: 100vh; 
+        }
+        .cry__wolf {
+            background-color: var(--main-bg-color);
+        }
+        .see__spirit {
+            background-color: var(--secondary-bg-color);
+        }
+        .flying__flames {
+            background-color: var(--tertiary-bg-color);
+        }
+        @keyframes shadow {
+            100% {
+                transform: rotateZ(60deg) translate(1em, -9em); 
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <article class="story__time">
+        <article class="cry__wolf">
+            <button>Cry Wolf</button>
+        </article>
+        <article class="see__spirit">
+            <button>Whooo~</button>
+        </article>
+        <article class="flying__flames">
+            <button>Burnish</button>
+        </article>
+    </article>
+    
+</body>
+</html>
