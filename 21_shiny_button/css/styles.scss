@@ -1,0 +1,141 @@
+// Material Theming
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+// Define theme variables before importing any MDC Web component styles
+$mdc-theme-primary: #0040a0;
+$focus-color: rgb(96, 96, 96);
+
+:root {
+    --mdc-theme-primary: #0040a0;
+}
+
+// Styling unrelated to button
+body {
+    background: #f9fcff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.shop-button {
+    font-family: Roboto, sans-serif;
+    font-size: 80%;
+    /* line-height: 2.25rem; */
+    font-weight: 500;
+    letter-spacing: 0.08929em;
+    text-transform: uppercase;
+    line-height: inherit;
+    border-style: solid;
+    padding: 0 14px 0 14px;
+    border-width: 2px;
+    text-decoration: none;
+    padding: 0 8px 0 8px;
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    min-width: 64px;
+    height: 36px;
+    transition: background-color 0.5s ease-in-out;
+
+    outline: 2px solid transparent;
+    line-height: inherit;
+    -webkit-appearance: none;
+    overflow: hidden;
+    vertical-align: middle;
+    border-radius: 4px;
+    border-color: $mdc-theme-primary;
+    &:before {
+        transition: opacity 15ms linear, background-color 15ms linear;
+        z-index: 1;
+    }
+    &:before, &:after {
+        top: calc(50% - 100%);
+        left: calc(50% - 100%);
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+        content: "";
+    }
+}
+
+.shop-button-interior {
+    line-height: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    color: $mdc-theme-primary;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        background: white;
+        opacity: 0.3;
+        height: 100%;
+        width: 100%;
+        transform: skewX(-45deg);
+        background: linear-gradient(to right, white, white 20px, transparent 20px);
+        transform-origin: left bottom;
+        animation: shine 10s ease-in infinite;
+    }
+}
+
+.shop-button-icon {
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    display: inline-block;
+    white-space: nowrap;
+    fill: $mdc-theme-primary;
+}
+
+.shop-button:hover {
+    background: $mdc-theme-primary;
+    .shop-button-interior {
+        color: white;
+    }
+    .shop-button-icon {
+        fill: white;
+    }
+}
+.shop-button:focus {
+    box-shadow: 0 0 .15rem $focus-color;
+    background: $mdc-theme-primary;
+    .shop-button-interior {
+        color: white;
+    }
+    .shop-button-icon {
+        fill: white;
+    }
+}
+
+@media (prefers-reduced-motion) {
+
+    /* prefers-reduced-motion: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion  */
+    .animation {
+        animation-name: dissolve;
+    }
+}
+// Button Animation
+@keyframes shine {
+    0% {
+        transform: skewX(-45deg) translateX(-100%);
+    }
+    10% {
+        transform: skewX(-45deg) translateX(100%);
+    }
+    100% {
+        transform: skewX(-45deg) translateX(100%);
+    }
+}
+  

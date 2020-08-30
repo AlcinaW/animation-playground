@@ -21,3 +21,5 @@ SVG and CSS animation projects
 17. "Pre-loader: Detective ver." (SVG, CSS) 
 18. "Pre-loader: Kid ver." (SVG, CSS), inspired by Persona 5 - [Codepen Demo](https://codepen.io/AlcinaW/full/YgdONv)
 19. "All the stars in the sky" (CSS shapes) 
+20. Radial SVG UI w.i.p.
+21. Imitating Material UI shiny button, remix of [Una Kravets's demo](https://glitch.com/~shiny-shop-button) and [Motion design in UI - Designing in the Browser](https://youtu.be/jWur1VrxNUg), with changes based on [content model](https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements)

@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+:root {
+  --mdc-theme-primary: #0040a0;
+}
+
+body {
+  background: #f9fcff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.shop-button {
+  font-family: Roboto, sans-serif;
+  font-size: 80%;
+  /* line-height: 2.25rem; */
+  font-weight: 500;
+  letter-spacing: 0.08929em;
+  text-transform: uppercase;
+  line-height: inherit;
+  border-style: solid;
+  padding: 0 14px 0 14px;
+  border-width: 2px;
+  text-decoration: none;
+  padding: 0 8px 0 8px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  min-width: 64px;
+  height: 36px;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+  outline: 2px solid transparent;
+  line-height: inherit;
+  -webkit-appearance: none;
+  overflow: hidden;
+  vertical-align: middle;
+  border-radius: 4px;
+  border-color: #0040a0;
+}
+
+.shop-button:before {
+  -webkit-transition: opacity 15ms linear, background-color 15ms linear;
+  transition: opacity 15ms linear, background-color 15ms linear;
+  z-index: 1;
+}
+
+.shop-button:before, .shop-button:after {
+  top: calc(50% - 100%);
+  left: calc(50% - 100%);
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  content: "";
+}
+
+.shop-button-interior {
+  line-height: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #0040a0;
+}
+
+.shop-button-interior:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: white;
+  opacity: 0.3;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: skewX(-45deg);
+          transform: skewX(-45deg);
+  background: linear-gradient(to right, white, white 20px, transparent 20px);
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  -webkit-animation: shine 10s ease-in infinite;
+          animation: shine 10s ease-in infinite;
+}
+
+.shop-button-icon {
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  display: inline-block;
+  white-space: nowrap;
+  fill: #0040a0;
+}
+
+.shop-button:hover {
+  background: #0040a0;
+}
+
+.shop-button:hover .shop-button-interior {
+  color: white;
+}
+
+.shop-button:hover .shop-button-icon {
+  fill: white;
+}
+
+.shop-button:focus {
+  -webkit-box-shadow: 0 0 0.15rem #606060;
+          box-shadow: 0 0 0.15rem #606060;
+  background: #0040a0;
+}
+
+.shop-button:focus .shop-button-interior {
+  color: white;
+}
+
+.shop-button:focus .shop-button-icon {
+  fill: white;
+}
+
+@media (prefers-reduced-motion) {
+  /* prefers-reduced-motion: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion  */
+  .animation {
+    -webkit-animation-name: dissolve;
+            animation-name: dissolve;
+  }
+}
+
+@-webkit-keyframes shine {
+  0% {
+    -webkit-transform: skewX(-45deg) translateX(-100%);
+            transform: skewX(-45deg) translateX(-100%);
+  }
+  10% {
+    -webkit-transform: skewX(-45deg) translateX(100%);
+            transform: skewX(-45deg) translateX(100%);
+  }
+  100% {
+    -webkit-transform: skewX(-45deg) translateX(100%);
+            transform: skewX(-45deg) translateX(100%);
+  }
+}
+
+@keyframes shine {
+  0% {
+    -webkit-transform: skewX(-45deg) translateX(-100%);
+            transform: skewX(-45deg) translateX(-100%);
+  }
+  10% {
+    -webkit-transform: skewX(-45deg) translateX(100%);
+            transform: skewX(-45deg) translateX(100%);
+  }
+  100% {
+    -webkit-transform: skewX(-45deg) translateX(100%);
+            transform: skewX(-45deg) translateX(100%);
+  }
+}
+/*# sourceMappingURL=styles.css.map */
